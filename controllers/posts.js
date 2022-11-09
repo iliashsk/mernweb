@@ -1,9 +1,5 @@
 import Item,{Usercont} from '../models/postMessage.js'
 
-export const getPost=(req,res)=>{
-	res.send("welcome to router");
-  console.log("router called");
-}
 
 
 
