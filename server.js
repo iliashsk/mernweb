@@ -87,12 +87,13 @@ app.get("/api",async(req,res)=>{
 
  
  });
-*/
+
 if(process.env.NODE_ENV==='production'){
   app.use(express.static(path.join(__dirname,'../client/build')));
   app.get('*',(req,res)=>res.sendFile(__dirname,'../','client','build','index.html'))
 }
 else{app.get('/',(req,res)=>res.json(({message:"how are you"})))}
+*/
 //start your server on port 5000
 app.listen(port, () => {
   console.log('Server Listening on port'+port);
