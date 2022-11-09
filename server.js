@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/",postRoutes);
 
-var port = process.env.PORT || 5000;
+let port = process.env.PORT || 5000;
 
 
 //mongoose.connect("mongodb+srv://iliash:Hello123@cluster0.lceburz.mongodb.net/todoList");
