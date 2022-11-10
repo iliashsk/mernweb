@@ -24,7 +24,7 @@ const [temp,setTemp]=useState({
 }
 
 axios
-.post("http://localhost:5000/weath", rate)
+.post("/weath", rate)
 .then((rate) => {
   console.log(rate.data.town+" " +rate.data.temp);
 setTemp({
