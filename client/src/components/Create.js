@@ -41,7 +41,7 @@ class Create extends Component {
     };
 
     axios
-      .post("http://localhost:5000/create", book)
+      .post("/create", book)
       .then(() =>
         console.log("hhoioiuoi"))
       .catch(err => {
