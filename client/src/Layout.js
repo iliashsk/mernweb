@@ -5,7 +5,7 @@ const Layout = () => {
 
   const col={
     color:'black',
-    fontSize:'30px',
+    fontSize:'25px',
     textDecoration:'none',
 
   }
@@ -28,6 +28,9 @@ const Layout = () => {
           </li>
            <li className="laylink">
             <NavLink to="/registdetails" style={col} activeClassName="active">Registered user Details</NavLink>
+          </li>
+          <li className="laylink">
+            <NavLink to="/weather" style={col} activeClassName="active">Check city temperature</NavLink>
           </li>
       
       

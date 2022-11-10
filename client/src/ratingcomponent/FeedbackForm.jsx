@@ -22,7 +22,7 @@ const [disabled,setDisabled]=useState(true);
   function handleSubmit(event) {
      event.preventDefault();
     
-    const port=process.env.NODE_ENV;
+  
     const rate={
   text:state.value,
   rating:rating,

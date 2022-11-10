@@ -14,6 +14,7 @@ import AboutPage from './ratingcomponent/AboutPage'
 import FeedbackContext,{FeedbackProvider} from './context/FeedbackContext';
 import {useContext} from 'react';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 function Cont(){
@@ -38,7 +39,7 @@ return(
       <Route path='/rating' element={<><Appli/><Layout/></>}/>
       <Route path='/regist' element={<><Create/><Layout/></>}/>
         <Route path='/registdetails' element={<><App/><Layout/></>}/>
-      
+      <Route path='/weather' element={<><Weather/><Layout/></>}/>
       </Routes>
       </BrowserRouter>
       

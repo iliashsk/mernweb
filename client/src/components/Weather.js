@@ -1,56 +1,64 @@
-import React, {Component,useState} from 'react';
-//import logo from './logo.svg';
-//import '../App.css';
+import React,{useState} from 'react';
+import Card from './shared/card'
+import Button from "./Button"
+import RatingSelect from './RatingSelect'
+import axios from 'axios';
 
+function FeedbackForm({reverse,FeedPass,handleAdd}){
+const [state,setState]=useState({value:""});
+const [temp,setTemp]=useState({
+                            temperature:"",
+                            city:""
+                                                
+                                });
 
-
-
-class Weather extends Component {
-  
-   callBackendAPI = async () => {
-    const response = await fetch('/weather');
-    const form = await response.json();
-    if (response.status !== 200) {
-      throw Error(form.message)
-    }
-    return form;
-  };
-  
-  
-state = [];
-
-  componentDidMount() {
-    this.callBackendAPI()
-    .then(res=>res.json())
-      .then(res =>this.setState(res))
-      .catch(err => console.log(err));
-  }
-
-
-    // fetching the GET route from the Express server which matches the GET route from server.js
-  
-
-
-
-  render() {
-      
- 
+  function handleChange(event) {
+    setState({value: event.target.value});
     
-    return (
-      
-      <div align="center" className="app">
-        <h2>{this.props.name}</h2 >
-        
-      
-        <tr> {Object.keys(this.state).map(key => <li key={key}>{key}</li>)}</tr>
-       <tr>{Object.values(this.state).map(val => <div key={val}>{val}</div>)}</tr>
-        
-
-        </div>
-    );
   }
+
+  function handleSubmit(event) {
+     event.preventDefault();
+    const rate={
+  text:state.value,
 }
 
+axios
+.post("http://localhost:5000/weath", rate)
+.then((rate) => {
+  console.log(rate.data.town+" " +rate.data.temp);
+setTemp({
+  temperature:rate.data.temp,
+  city:rate.data.town
+})
+})
+      .catch(err => {
+        console.error(err);
+      });
+  }
 
-export default Weather;
-
+    return (<div style={{float:"Right",marginRight:"100px"}}>
+      <Card reverse={true}>
+      
+      <form onSubmit={handleSubmit}>
+      
+        <label>
+          City Name:
+          <input type="text" 
+          value={state.value}
+           onChange={handleChange}
+            placeholder="Type City name "
+            />
+          <Button type='submit'></Button>
+          </label>
+      </form>
+      <div>
+      {
+      (temp.temperature?(<h3>Temperature of {temp.city} is {temp.temperature}
+      <sup>o</sup>C</h3>):<h3></h3>)
+      }
+      </div>
+</Card>
+   </div> );
+  }
+export default FeedbackForm;

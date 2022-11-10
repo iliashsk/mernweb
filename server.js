@@ -5,7 +5,7 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import https from 'https'
 import postRoutes from "./routes/posts.js"
-import Item from './models/postMessage.js'
+import Item,{Weather} from './models/postMessage.js'
 import bodyParser from 'body-parser';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -143,10 +143,39 @@ app.post("/weather", (req,res)=>{
     
     response.on("data",(dat)=>{ 
       const weather=JSON.parse(dat);
-      var temp=weather.main.temp
+      var temp=weather.main.temp;
       
       var temp=Math.trunc(temp-273);
+      const weath=new Weather({
+        city:city,
+        temp:temp
+      })
+      weath.save();
+
       res.send("<h1>The temperature of "+city+" is "+temp+" <sup>o</sup>C</h>");
     })
   })
+})
+
+app.post("/weath", (req,res)=>{
+  let town=req.body.text;
+const apikey="50a789f1ecfef4993d6f7ad02535a06e";
+  var url="https://api.openweathermap.org/data/2.5/weather?q="+town+"&appid="+apikey+"";
+
+  https.get(url,(response)=>{    
+    response.on("data",(dat)=>{
+      const weather=JSON.parse(dat);
+      var temperature=weather.main.temp;
+      
+      var temperature=Math.trunc(temperature-273);
+
+  
+      const weath=new Weather({
+        city:req.body.text,
+        temp:temperature
+      })
+      weath.save();
+      res.json({town:town,temp:temperature});
+    });
+    })
 })

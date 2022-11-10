@@ -12,7 +12,12 @@
    rating:Number,
    text:String
  })
+ const userSchema3=mongoose.Schema({
+  city:String,
+  temp:Number
+ })
+ const Weather=mongoose.model("Weather",userSchema3);
 const Item=mongoose.model("Item",userSchema);
 const Usercont=mongoose.model('Usercont',userSchema2);
 export default Item;
-export {Usercont};
+export {Usercont,Weather};
