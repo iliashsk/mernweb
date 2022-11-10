@@ -10,7 +10,6 @@ router.use(function (req, res, next) {
 
 router.post("/create",createPost);
 router.post("/rating",createRating);
-router.get("/Home",address);
 router.get("/api", dataForm);
 
 export default router;
