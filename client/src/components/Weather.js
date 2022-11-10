@@ -24,7 +24,7 @@ const [temp,setTemp]=useState({
 }
 
 axios
-.post("/weath", rate)
+.post("http://localhost:5000/weath", rate)
 .then((rate) => {
   console.log(rate.data.town+" " +rate.data.temp);
 setTemp({
@@ -55,7 +55,7 @@ setTemp({
       <div>
       {
       (temp.temperature?(<h3>Temperature of {temp.city} is {temp.temperature}
-      <sup>o</sup>C</h3>):<h3></h3>)
+      <sup>o</sup>C</h3>):<h3>you will see your result here</h3>)
       }
       </div>
 </Card>

@@ -162,20 +162,34 @@ app.post("/weath", (req,res)=>{
 const apikey="50a789f1ecfef4993d6f7ad02535a06e";
   var url="https://api.openweathermap.org/data/2.5/weather?q="+town+"&appid="+apikey+"";
 
-  https.get(url,(response)=>{    
+  https.get(url,(response)=>{   
+  
     response.on("data",(dat)=>{
       const weather=JSON.parse(dat);
-      var temperature=weather.main.temp;
+      if(weather.cod===200){
+        var temperature=weather.main.temp;
       
       var temperature=Math.trunc(temperature-273);
 
   
-      const weath=new Weather({
+      const weather1=new Weather({
         city:req.body.text,
         temp:temperature
       })
-      weath.save();
+      weather1.save((err)=>{
+        if(!err){
+          console.log("Successfully added wether")
+        }
+      });
       res.json({town:town,temp:temperature});
+      }
+      else{
+        res.json({town:town,temp:"not found"});
+      }
+      
     });
+
+
+
     })
 })
