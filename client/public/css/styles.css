@@ -103,7 +103,7 @@ background-color: goldenrod;
 
 }
 .card.reverse{
-    color: yellow;
+    color:darkblue;
     background-color: goldenrod;
   text-decoration: none;
   padding: 15px 26px;
@@ -113,7 +113,7 @@ background-color: goldenrod;
   align: center;
 }
 .card.reverse:hover{
-  background: blue;
+  background: lightgreen;
 }
 .card.close{
    border-radius: 30%;

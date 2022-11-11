@@ -52,7 +52,7 @@ setTemp({
           <Button type='submit'></Button>
           </label>
       </form>
-      <div>
+      <div style={{overflow:"auto",height:"100px",width:"300px"}}>
       {
       (temp.temperature?(<h3>Temperature of {temp.city} is {temp.temperature}
       <sup>o</sup>C</h3>):<h3>you will see your result here</h3>)

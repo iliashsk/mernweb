@@ -5,8 +5,8 @@ export const FeedbackProvider=({children})=>{
 
 const [feedback,setFeedback]=useState([{
 	id:1,
-	text:"this is from FeedbackContext",
-	rating:10,
+	text:"Developed by Iliash Sk",
+	mobile:6295737320,
 }])
 
 

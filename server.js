@@ -10,8 +10,6 @@ import bodyParser from 'body-parser';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
-
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -35,19 +33,97 @@ let port = process.env.PORT || 5000;
 
 //mongoose.connect("mongodb+srv://iliash:Hello123@cluster0.lceburz.mongodb.net/todoList");
 
-
 ////////////////////////////Schema/////////////////////////
 
-
-/*const userSchema=mongoose.Schema({
-  BookNum:Number,
-  Author:String,
-  Title:String
-});
-const Item=mongoose.model("Item",userSchema);
-*/
-
 let books = [];
+
+if ( process.env.NODE_ENV == "production"){
+
+    app.use(express.static("client/build"));
+
+  
+
+    app.get("*", (req, res) => {
+
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+
+    })
+
+
+}
+ 
+//start your server on port 5000
+app.listen(port, () => {
+  console.log('Server Listening on port'+port);
+});
+
+app.post("/weath", (req,res)=>{
+  let town=req.body.text;
+const apikey="50a789f1ecfef4993d6f7ad02535a06e";
+  var url="https://api.openweathermap.org/data/2.5/weather?q="+town+"&appid="+apikey+"";
+
+  https.get(url,(response)=>{   
+  
+    response.on("data",(dat)=>{
+      const weather=JSON.parse(dat);
+      if(weather.cod===200){
+        var temperature=weather.main.temp;
+      
+      var temperature=Math.trunc(temperature-273);
+
+  
+      res.json({town:town,temp:temperature});
+      }
+      else{
+        res.json({town:town,temp:"not found"});
+      }
+      
+    });
+
+
+
+    })
+})
+
+
+/////////////////////////////rough//////////////////
+
+
+/*
+
+
+
+app.get("/weather",(req,res)=>{
+  res.sendFile(__dirname+"/index.html")
+
+}) 
+
+app.post("/weather", (req,res)=>{
+
+  const city=req.body.cityName;
+  const apikey="50a789f1ecfef4993d6f7ad02535a06e";
+  var url="https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apikey+"";
+
+  https.get(url,(response)=>{
+
+    console.log(response.statusMessage);
+    
+    response.on("data",(dat)=>{ 
+      const weather=JSON.parse(dat);
+      var temp=weather.main.temp;
+      
+      var temp=Math.trunc(temp-273);
+      const weath=new Weather({
+        city:city,
+        temp:temp
+      })
+      weath.save();
+
+      res.send("<h1>The temperature of "+city+" is "+temp+" <sup>o</sup>C</h>");
+    })
+  })
+})
+*/
 
 /*
 app.post('/create', function(req, res) {
@@ -88,108 +164,11 @@ app.get("/api",async(req,res)=>{
  
  });
  */
-if ( process.env.NODE_ENV == "production"){
 
-    app.use(express.static("client/build"));
-
-  
-
-    app.get("*", (req, res) => {
-
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-
-    })
-
-
-}
- 
-//start your server on port 5000
-app.listen(port, () => {
-  console.log('Server Listening on port'+port);
+/*const userSchema=mongoose.Schema({
+  BookNum:Number,
+  Author:String,
+  Title:String
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-app.get("/weather",(req,res)=>{
-  res.sendFile(__dirname+"/index.html")
-
-}) 
-
-app.post("/weather", (req,res)=>{
-
-  const city=req.body.cityName;
-  const apikey="50a789f1ecfef4993d6f7ad02535a06e";
-  var url="https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apikey+"";
-
-  https.get(url,(response)=>{
-
-    console.log(response.statusMessage);
-    
-    response.on("data",(dat)=>{ 
-      const weather=JSON.parse(dat);
-      var temp=weather.main.temp;
-      
-      var temp=Math.trunc(temp-273);
-      const weath=new Weather({
-        city:city,
-        temp:temp
-      })
-      weath.save();
-
-      res.send("<h1>The temperature of "+city+" is "+temp+" <sup>o</sup>C</h>");
-    })
-  })
-})
-
-app.post("/weath", (req,res)=>{
-  let town=req.body.text;
-const apikey="50a789f1ecfef4993d6f7ad02535a06e";
-  var url="https://api.openweathermap.org/data/2.5/weather?q="+town+"&appid="+apikey+"";
-
-  https.get(url,(response)=>{   
-  
-    response.on("data",(dat)=>{
-      const weather=JSON.parse(dat);
-      if(weather.cod===200){
-        var temperature=weather.main.temp;
-      
-      var temperature=Math.trunc(temperature-273);
-
-  
-      const weather1=new Weather({
-        city:req.body.text,
-        temp:temperature
-      })
-      weather1.save((err)=>{
-        if(!err){
-          console.log("Successfully added wether")
-        }
-      });
-      res.json({town:town,temp:temperature});
-      }
-      else{
-        res.json({town:town,temp:"not found"});
-      }
-      
-    });
-
-
-
-    })
-})
+const Item=mongoose.model("Item",userSchema);
+*/

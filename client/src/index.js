@@ -13,6 +13,7 @@ import Layout from './Layout'
 import AboutPage from './ratingcomponent/AboutPage'
 import FeedbackContext,{FeedbackProvider} from './context/FeedbackContext';
 import {useContext} from 'react';
+import Calculator from './components/Calculator'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -23,8 +24,10 @@ const {feedback}=useContext(FeedbackContext);
   
 return(
 
-  <div>
-<h1>{feedback[0].text}</h1>
+  <div style={{backgroundColor:"lightCyan",height:"100px"}}>
+<p align="center">{feedback[0].text}</p>
+<p align="center">mobile: {feedback[0].mobile}</p>
+
   </div>
 
   )
@@ -35,7 +38,7 @@ return(
     <FeedbackProvider>
     <div className="main"><BrowserRouter>
       <Routes>
-      <Route path='/' element={<><Clock/><Layout/><Cont/></>} />
+      <Route path='/' element={<><Clock/><Layout/><Cont/><Calculator/></>} />
       <Route path='/rating' element={<><Appli/><Layout/></>}/>
       <Route path='/regist' element={<><Create/><Layout/></>}/>
         <Route path='/registdetails' element={<><App/><Layout/></>}/>
