@@ -3,12 +3,14 @@ import express from 'express'
 import logger from 'morgan'
 import cors from 'cors'
 import mongoose from 'mongoose'
-import https from 'https'
 import postRoutes from "./routes/posts.js"
 import Item,{Weather} from './models/postMessage.js'
 import bodyParser from 'body-parser';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import encrypt from 'mongoose-encryption';
+import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -26,10 +28,10 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+
 app.use("/",postRoutes);
 
-let port = process.env.PORT || 5000;
-
+let port = process.env.PORT||5000;
 
 //mongoose.connect("mongodb+srv://iliash:Hello123@cluster0.lceburz.mongodb.net/todoList");
 
@@ -37,7 +39,7 @@ let port = process.env.PORT || 5000;
 
 let books = [];
 
-if ( process.env.NODE_ENV == "production"){
+if ( process.env.NODE_ENV ==="production"){
 
     app.use(express.static("client/build"));
 
@@ -48,42 +50,12 @@ if ( process.env.NODE_ENV == "production"){
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 
     })
-
-
 }
  
 //start your server on port 5000
 app.listen(port, () => {
   console.log('Server Listening on port'+port);
 });
-
-app.post("/weath", (req,res)=>{
-  let town=req.body.text;
-const apikey="50a789f1ecfef4993d6f7ad02535a06e";
-  var url="https://api.openweathermap.org/data/2.5/weather?q="+town+"&appid="+apikey+"";
-
-  https.get(url,(response)=>{   
-  
-    response.on("data",(dat)=>{
-      const weather=JSON.parse(dat);
-      if(weather.cod===200){
-        var temperature=weather.main.temp;
-      
-      var temperature=Math.trunc(temperature-273);
-
-  
-      res.json({town:town,temp:temperature});
-      }
-      else{
-        res.json({town:town,temp:"not found"});
-      }
-      
-    });
-
-
-
-    })
-})
 
 
 /////////////////////////////rough//////////////////

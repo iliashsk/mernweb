@@ -1,4 +1,5 @@
  import mongoose from 'mongoose'
+ import encrypt from 'mongoose-encryption';
  mongoose.connect("mongodb+srv://iliash:Hello123@cluster0.lceburz.mongodb.net/UserData");
  const userSchema=mongoose.Schema({
   name:String,
@@ -8,6 +9,8 @@
   grade:String,
   favsub:String
 });
+ var secret="howareyou";
+userSchema.plugin(encrypt, {secret:secret,encryptedFields:["phone"]});
  const userSchema2=mongoose.Schema({
    rating:Number,
    text:String

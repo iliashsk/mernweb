@@ -15,6 +15,8 @@ function App(){
         for(var i=0;i<data.length;i++){
           delete data[i]._id;
           delete data[i].__v;
+          delete data[i]._ct;
+          delete data[i]._ac;
         }
        setFeedback([...data])
 
