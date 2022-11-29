@@ -1,5 +1,4 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Clock from './components/Clock'
 import Create from './components/Create';
@@ -16,14 +15,31 @@ import {useContext} from 'react';
 import Calculator from './components/Calculator'
 import Login from './login/Login'
 
-
-
 function AppMain(){
 
-return(<FeedbackProvider>
+
+
+function Cont(){
+const {feedback}=useContext(FeedbackContext);
+
+  
+return(
+
+  <div style={{backgroundColor:"lightCyan",height:"100px"}}>
+<p align="center">{feedback[0].text}</p>
+<p align="center">mobile: {feedback[0].mobile}</p>
+
+  </div>
+
+  )
+};
+
+
+  return(
+    <FeedbackProvider>
     <div className="main"><BrowserRouter>
       <Routes>
-      <Route path='/' element={<><Clock/><Layout/><Calculator/><Login/></>} />
+      <Route path='/' element={<><Clock/><Layout/><Cont/><Calculator/><Login/></>} />
       <Route path='/rating' element={<><Appli/><Layout/></>}/>
       <Route path='/regist' element={<><Create/><Layout/></>}/>
         <Route path='/registdetails' element={<><App/><Layout/></>}/>
@@ -32,6 +48,8 @@ return(<FeedbackProvider>
       </BrowserRouter>
       
       </div>
-      </FeedbackProvider>)
+      </FeedbackProvider>
+      
+)
 }
 export default AppMain;

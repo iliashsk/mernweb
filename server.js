@@ -4,7 +4,7 @@ import logger from 'morgan'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import postRoutes from "./routes/posts.js"
-import Item,{Weather} from './models/postMessage.js'
+import Item from './models/postMessage.js'
 import bodyParser from 'body-parser';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -15,7 +15,9 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+
 const app = express();
+app.set('view engine', 'ejs');
 //use cors to allow cross origin resource sharing
 app.use(
   cors({
