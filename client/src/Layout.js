@@ -17,9 +17,7 @@ const Layout = () => {
   
   <div id="navli">
     <ul >
-     <li className="laylink">
-            <NavLink to="/" style={col} activeClassName="active">Home</NavLink>
-          </li>
+     
           <li className="laylink">
             <NavLink to="/rating" style={col} activeClassName="active">Rate Our Service</NavLink>
           </li >
@@ -31,6 +29,9 @@ const Layout = () => {
           </li>
           <li className="laylink">
             <NavLink to="/weather" style={col} activeClassName="active">Check city temperature</NavLink>
+          </li>
+          <li className="laylink">
+            <NavLink to="/calculator" style={col} activeClassName="active">Temperature converter</NavLink>
           </li>
       
       

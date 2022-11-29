@@ -14,6 +14,8 @@ import FeedbackContext,{FeedbackProvider} from './context/FeedbackContext';
 import {useContext} from 'react';
 import Calculator from './components/Calculator'
 import Login from './login/Login'
+import Header from './components/nav/Header'
+
 
 function AppMain(){
 
@@ -36,17 +38,21 @@ return(
 
 
   return(
+
     <FeedbackProvider>
     <div className="main"><BrowserRouter>
       <Routes>
-      <Route path='/' element={<><Clock/><Layout/><Cont/><Calculator/><Login/></>} />
-      <Route path='/rating' element={<><Appli/><Layout/></>}/>
-      <Route path='/regist' element={<><Create/><Layout/></>}/>
-        <Route path='/registdetails' element={<><App/><Layout/></>}/>
-      <Route path='/weather' element={<><Weather/><Layout/></>}/>
+      <Route path='/' element={<><Header/><Clock/><Layout/><Cont/></>} />
+      <Route path='/rating' element={<><Header/><Appli/><Layout/></>}/>
+      <Route path='/regist' element={<><Header/><Create/><Layout/></>}/>
+        <Route path='/registdetails' element={<><Header/><App/><Layout/></>}/>
+      <Route path='/weather' element={<><Header/><Weather/><Layout/></>}/>
+        <Route path='/login' element={<><Header/><Login/></>} />
+      <Route path='/profile' element={<><Header/><Appli/></>}/>
+      <Route path='/calculator' element={<><Header/><Calculator/><Layout/></>}/>
       </Routes>
       </BrowserRouter>
-      
+    
       </div>
       </FeedbackProvider>
       

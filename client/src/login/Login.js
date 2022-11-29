@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import axios from 'axios';
 import Button from '../components/Button';
 import App from '../components/App'
 import AppMain from '../AppMain'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route,useNavigate } from "react-router-dom";
 import { Outlet, Link,NavLink } from "react-router-dom";
 import ActiveMenuLink from "active-menu-link"
+
 
 class Login extends Component {
   constructor(props) {
@@ -52,10 +53,10 @@ class Login extends Component {
       .catch(err => {
         console.error("error detected");
       });
-      
+     /* const navigate=useNavigate();
+navigate('/rating');
 
-
-
+*/
   };
   obarray=arr=>{
         const keys=Object.keys(this.state);
@@ -104,7 +105,7 @@ class Login extends Component {
             </table>
           </form>
         </div>
-        <div>{this.state.sec?<div><Link to="/rating"/>trying to log in and refferign g it </div>:<h2></h2>}</div>
+        <div>{(this.state.sec!=='')?<div><h4>Login Succesful</h4><NavLink to="/" >Go To Profile</NavLink></div>:<h2>{this.state.email}not exists</h2>}</div>
     
       </div>
     );

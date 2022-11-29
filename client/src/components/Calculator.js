@@ -76,7 +76,7 @@ class Calculator extends React.Component {
     const fahrenheit = scale === 'c' ? tryConvert(temperature, toFahrenheit) : temperature;
 
     return (
-      <div>
+      <div style={{float:'Right'}}>
         <TemperatureInput
           scale="c"
           temperature={celsius}
