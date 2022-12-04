@@ -28,11 +28,11 @@ const Header=()=>{
     </Item>
    
 
-    <SubMenu key="SubMenu" title="Setting" icon={<SettingOutlined />} >
-      <Item key="two" icon={<AppstoreOutlined />}>
+    <SubMenu key="SubMenu" title="Setting" icon={<SettingOutlined />}>
+      <Item key="two" icon={<AppstoreOutlined/>}>
         Setting 1
       </Item>
-      <Item key="three" icon={<AppstoreOutlined />}>
+      <Item key="three" icon={<AppstoreOutlined/>}>
         Setting 2
       </Item>
       

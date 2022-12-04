@@ -3,7 +3,7 @@ import axios from 'axios';
 import Button from '../components/Button';
 import App from '../components/App'
 import AppMain from '../AppMain'
-import { BrowserRouter, Routes, Route,useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route,useNavigate,Navigate } from "react-router-dom";
 import { Outlet, Link,NavLink } from "react-router-dom";
 import ActiveMenuLink from "active-menu-link"
 
@@ -105,7 +105,7 @@ navigate('/rating');
             </table>
           </form>
         </div>
-        <div>{(this.state.sec!=='')?<div><h4>Login Succesful</h4><NavLink to="/" >Go To Profile</NavLink></div>:<h2>{this.state.email}not exists</h2>}</div>
+        <div>{(this.state.sec!=='')?<div><Navigate to="/" /></div>:<h2>{this.state.email}not exists</h2>}</div>
     
       </div>
     );

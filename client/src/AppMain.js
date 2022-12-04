@@ -17,6 +17,7 @@ import Login from './login/Login'
 import Header from './components/nav/Header'
 
 
+
 function AppMain(){
 
 
@@ -43,13 +44,13 @@ return(
     <div className="main"><BrowserRouter>
       <Routes>
       <Route path='/' element={<><Header/><Clock/><Layout/><Cont/></>} />
-      <Route path='/rating' element={<><Header/><Appli/><Layout/></>}/>
-      <Route path='/regist' element={<><Header/><Create/><Layout/></>}/>
-        <Route path='/registdetails' element={<><Header/><App/><Layout/></>}/>
-      <Route path='/weather' element={<><Header/><Weather/><Layout/></>}/>
+      <Route path='/rating' element={<><Header/><Appli/><Layout/><Cont/></>}/>
+      <Route path='/regist' element={<><Header/><Create/><Layout/><Cont/></>}/>
+        <Route path='/registdetails' element={<><Header/><App/><Layout/><Cont/></>}/>
+      <Route path='/weather' element={<><Header/><Weather/><Layout/><Cont/></>}/>
         <Route path='/login' element={<><Header/><Login/></>} />
       <Route path='/profile' element={<><Header/><Appli/></>}/>
-      <Route path='/calculator' element={<><Header/><Calculator/><Layout/></>}/>
+      <Route path='/calculator' element={<><Header/><Calculator/><Layout/><Cont/></>}/>
       </Routes>
       </BrowserRouter>
     

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import AppMain from './AppMain'
 import axios from 'axios';
 import Button from './components/Button';
+import Login from './login/Login'
 
 
 
@@ -12,10 +13,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 //////////////////////////////
 
-var x=10;
-//console.log(this.state.sec);
-    if(x===10){
+console.log("this is well");
+if(10===20/2){
   root.render(
+
     
        <>
       
