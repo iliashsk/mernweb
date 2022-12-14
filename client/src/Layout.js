@@ -1,6 +1,6 @@
-import { Outlet, Link,NavLink } from "react-router-dom";
+import { Outlet, Link,NavLink,useNavigate } from "react-router-dom";
 import ActiveMenuLink from "active-menu-link"
-
+import { getAuth, updateProfile } from 'firebase/auth'
 const Layout = () => {
 
   const col={
@@ -8,6 +8,13 @@ const Layout = () => {
     fontSize:'25px',
     textDecoration:'none',
 
+  }
+  const navigate=useNavigate();
+  const auth=getAuth();
+  const onLogout = () => {
+    auth.signOut()
+    navigate('/');
+    navigate(0);
   }
   
   
@@ -33,6 +40,13 @@ const Layout = () => {
           <li className="laylink">
             <NavLink to="/calculator" style={col} activeClassName="active">Temperature converter</NavLink>
           </li>
+          <li className="laylink">
+                <header className='profileHeader'>
+        <button type='button' className='logOut' onClick={onLogout}>
+          Logout
+        </button>
+      </header>
+      </li>
       
       
     </ul>

@@ -6,15 +6,15 @@ const {SubMenu,Item}=Menu;
 
 const Header=()=>{
 
-	const [current,setCurrent]=useState("mail");
+  const [current,setCurrent]=useState("mail");
 
-	const handleClick=(e)=>{
-		console.log(e.key);
-		setCurrent(e.key);
+  const handleClick=(e)=>{
+    console.log(e.key);
+    setCurrent(e.key);
 
-	}
+  }
 
-	return(
+  return(
   <Menu onClick={handleClick} defaultSelectedKeys={[current]} mode="horizontal">
     
     <Item key="home" icon={<HomeOutlined />}>
@@ -25,7 +25,7 @@ const Header=()=>{
      Registration
      <Link to='/regist' ></Link>
     </Item>
-   {/* <Item key="login" icon={<UserOutlined />} className="float-right"	>
+   {/* <Item key="login" icon={<UserOutlined />} className="float-right"  >
       <Link to='/login' >Login</Link>
     </Item>
   */ }
