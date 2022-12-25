@@ -26,9 +26,9 @@ function App(){
   }, []);
 
   return(
-    <div style={{float:'Right',marginRight:"50px"}}>
-    <h1  style={{color:"#934353"}} align="right">All Users details</h1>
-    <p align="right">Total: {feedback.length}</p>
+    <div style={{align:"center"}}>
+    <h1  style={{color:"#934353"}} align="center">All Users details</h1>
+    <p align="center">Total: {feedback.length}</p>
     <div  className="profileuser"  style={{backgroundColor:"goldenrod"}}>
 {feedback.map(obj=>
 
@@ -38,7 +38,6 @@ function App(){
     
   </div>
     
-
     </div>
     )
 

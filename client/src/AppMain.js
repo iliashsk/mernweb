@@ -22,7 +22,8 @@ import ForgotPassword  from  './pages/ForgotPassword'
 import Signin  from  './pages/Signin'
 import SignUp  from  './pages/Signup'
 import Footer from './components/nav/Footer'
-
+import Side from './components/nav/Side'
+import Sidebar from './components/nav/Sidebar'
 
 function AppMain(){
 
@@ -32,13 +33,14 @@ if(loggedIn){
      <FeedbackProvider>
     <div className="main"><BrowserRouter>
       <Routes>
-      <Route path='/' element={<><Header/><About/><Layout/><Footer/></>} />
-      <Route path='/rating' element={<><Header/><Appli/><Layout/></>}/>
-      <Route path='/regist' element={<><Header/><Create/><Layout/><Footer/></>}/>
-      <Route path='/registdetails' element={<><Header/><App/><Layout/><Footer/></>}/>
-      <Route path='/weather' element={<><Header/><Weather/><Layout/><Footer/></>}/> 
-      <Route path='/profile' element={<><Header/><App/><Layout/></>}/>
-      <Route path='/calculator' element={<><Header/><Calculator/><Layout/><Footer/></>}/>
+      <Route path='/' element={<><div><Header/></div><div><Sidebar content={<><About/><AboutPage/></>}/></div></>} />
+      <Route path='/rating' element={<><Header/><Sidebar content={<Appli/>}/></>}/>
+      <Route path='/regist' element={<><Header/><Sidebar content={<Create/>}/></>}/>
+      <Route path='/registdetails' element={<><Header/><Sidebar content={<App/>}/></>}/>
+      <Route path='/weather' element={<><Header/><Sidebar content={<Weather/>}/></>}/> 
+      <Route path='/profile' element={<><Header/><Sidebar content={<App/>}/></>}/>
+      <Route path='/calculator' element={<><Header/><Sidebar content={<Calculator/>}/></>}/>
+      <Route path='/setting' element={<><Header/><Sidebar/></>} />
       </Routes>
       </BrowserRouter>
     
@@ -51,9 +53,9 @@ else{
   return (<>
     <BrowserRouter>
     <Routes>
-    <Route path='/forgot-password' element={<><ForgotPassword/></>} />
+   {/* <Route path='/forgot-password' element={<><ForgotPassword/></>} />*/}
           <Route path='/' element={<><Signin/></>} />
-          <Route path='/signup' element={<><SignUp/></>} />
+       { /*  <Route path='/signup' element={<><SignUp/></>} /> */}
           <Route path='/signin' element={<><Signin/></>} />
       </Routes>
       

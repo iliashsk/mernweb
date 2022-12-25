@@ -37,7 +37,7 @@ setTemp({
       });
   }
 
-    return (<div style={{float:"Right",marginRight:"100px"}}>
+    return (<div style={{marginRight:"100px"}}>
       <Card reverse={true}>
       
       <form onSubmit={handleSubmit}>

@@ -1,70 +1,121 @@
-import React,{useState} from 'react'
-import {Menu} from 'antd'
-import { HomeOutlined, AppstoreOutlined, SettingOutlined,UserOutlined,UserAddOutlined,DropboxOutlined } from '@ant-design/icons';
+import React from 'react';
+import Appli from '../../ratingcomponent/Appli'
 import {Link} from 'react-router-dom'
+import {
+  AppstoreOutlined,
+  BarChartOutlined,
+  CloudOutlined,
+  ShopOutlined,
+  TeamOutlined,
+  UploadOutlined,
+  UserOutlined,
+  VideoCameraOutlined,
+  HomeOutlined,
+} from '@ant-design/icons';
+import { Layout, Menu, theme } from 'antd';
 const {SubMenu,Item}=Menu;
+const { Header, Content, Footer, Sider } = Layout;
+const items = [
+  UserOutlined,
+  VideoCameraOutlined,
+  UploadOutlined,
+  BarChartOutlined,
+  CloudOutlined,
+  AppstoreOutlined,
+  TeamOutlined,
+  ShopOutlined,
+  HomeOutlined,
+].map((icon, index) => ({
+  key: String(index + 1),
+  icon: React.createElement(icon),
+  label: `nav ${index + 1}`,
+}));
 
-const Header=()=>{
 
-  const [current,setCurrent]=useState("mail");
 
-  const handleClick=(e)=>{
-    console.log(e.key);
-    setCurrent(e.key);
 
-  }
-
-  return(
-  <Menu onClick={handleClick} defaultSelectedKeys={[current]} mode="horizontal">
-    
-    <Item key="home" icon={<HomeOutlined />}>
+const Sidebar = ({content}) => {
+  const {
+    token: { colorBgContainer },
+  } = theme.useToken();
+  return (
+    <Layout hasSider>
+      <Sider
+        style={{
+          overflow: 'auto',
+          height: '100vh',
+          position: 'fixed',
+          left: 0,
+          top: 0,
+          bottom: 0,
+          marginTop:"46px",
+          background:"lightgreen"
+        }}
+      >
+        <div
+          style={{
+            height: 32,
+            margin: 16,
+            background: 'rgba(255, 255, 255, 0.2)',
+          }}
+        />
+        <Menu theme="blue" mode="inline" key="Home" >
+       <Item key="home" icon={<HomeOutlined />}>
     home
       <Link to='/' ></Link>
     </Item>
-     <Item key="register" icon={<UserAddOutlined />} className="float-right">
-     Registration
-     <Link to='/regist' ></Link>
+    <SubMenu title="Rate It">
+      <Item key="home" icon={<HomeOutlined />}>
+    rating
+      <Link to='/rating' ></Link>
     </Item>
-   {/* <Item key="login" icon={<UserOutlined />} className="float-right"  >
-      <Link to='/login' >Login</Link>
-    </Item>
-  */ }
+    </SubMenu >
+        </Menu>
+      </Sider>
+      <Layout
+        className="site-layout"
+        style={{
+          marginLeft:200,
+        }}
+      >
+       
+        <Content
+          style={{
+            margin: '24px 16px 0',
+            overflow: 'initial',
 
-    <SubMenu key="SubMenu" title="Setting" icon={<SettingOutlined />}>
-      <Item key="two" icon={<AppstoreOutlined/>}>
-        Setting 1
-      </Item>
-      <Item key="three" icon={<AppstoreOutlined/>}>
-        Setting 2
-      </Item>
-      
-    </SubMenu>
-        <SubMenu key="Student" title="Admission" icon={<DropboxOutlined />}>
-      <Item key="two" icon={<AppstoreOutlined/>}>
-        Admission
-        <Link to='/regist' />
-      </Item>
-      <Item key="three" icon={<AppstoreOutlined/>}>
-        Merit List
-        <Link to='/merit' />
-      </Item>
-              <SubMenu key="Stud" title="class" icon={<DropboxOutlined />}>
-      <Item key="two" icon={<AppstoreOutlined/>}>
-        Eleven
-        <Link to='/regist' />
-      </Item>
-      <Item key="three" icon={<AppstoreOutlined/>}>
-        Twelve
-        <Link to='/merit' />
-      </Item>
-      
-    </SubMenu>
-      
-    </SubMenu>
-   
+          }}
+        >
+          <div
+            style={{
+              padding: 24,
+              textAlign: 'center',
+              background: "#8908",
+              marginTop:"20px",
 
-  
-  </Menu>
-);
-}
-export default Header;
+
+            }}
+          >
+           
+
+            {content}
+            
+
+          </div>
+        </Content>
+
+
+        <Footer
+          style={{
+            textAlign: 'center',
+            background:"lightgreen",
+            
+          }}
+        >
+         Devloped By Softech Technology Pvt Ltd <sup>Copyright</sup>
+        </Footer>
+      </Layout>
+    </Layout>
+  );
+};
+export default Sidebar;

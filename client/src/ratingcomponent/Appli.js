@@ -34,7 +34,7 @@ setFeedback([newFeedback, ...feedback]);
 
 	return(
 		<FeedbackProvider>
-		<div style={{float:'Right',marginRight:"50px"}}>
+		<div align="center">
 		<Header name="iliash sk" text="you are most welcome"/>
 		<FeedbackForm />
 		<FeedbackStats number={feedback}/>

@@ -42,7 +42,8 @@ function SignIn() {
       )
 
       if (userCredential.user) {
-        navigate('/profile')
+        navigate('/')
+        navigate(0)
       }
     } catch (error) {
       toast.error('Bad User Credentials')
@@ -97,11 +98,11 @@ function SignIn() {
           </div>
         </form>
 
-        <OAuth />
+       {/* <OAuth />
 
         <Link to='/signup' className='registerLink'>
           Sign Up Instead
-        </Link>
+        </Link>*/}
       </div>
     </>
   )

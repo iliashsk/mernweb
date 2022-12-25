@@ -4,7 +4,7 @@ import AppMain from './AppMain'
 import axios from 'axios';
 import Button from './components/Button';
 import Login from './login/Login'
-import Header from './components/nav/Sidebar'
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,8 +20,8 @@ if(10===20/2){
     
        <>
       
-    {/*<AppMain/>*/}
-       <Header/>
+    <AppMain/>
+       
     </>
     )}
     else{

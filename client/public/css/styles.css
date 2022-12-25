@@ -97,7 +97,7 @@ background-color: goldenrod;
   color: red;
   text-decoration: none;
   padding: 15px 26px;
-  position: relative;
+  position: ralative;
   display: inline-block;
   border-radius: 2px;
 
@@ -107,7 +107,7 @@ background-color: goldenrod;
     background-color: goldenrod;
   text-decoration: none;
   padding: 15px 26px;
-  position: relative;
+  position: initial;
   display: inline-block;
   border-radius: 2px;
   align: center;
@@ -124,12 +124,7 @@ background-color: goldenrod;
 }
 
 .num-display{
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  padding: 5px 10px;
-  border-radius: 50%;
-  background: green;
+  position: initial;
   color: white;
 }
 .close{
@@ -187,4 +182,12 @@ margin-right: 50px;
 .active{
   background: yellow;
   color: red;
+}
+.footer{
+position:relative;
+left:0;
+bottom:0;
+right:0;
+padding-bottom:60px;
+height: calc(100% - 60px);
 }

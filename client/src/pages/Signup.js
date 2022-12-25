@@ -57,6 +57,7 @@ function SignUp() {
     
 
       navigate('/')
+      navigate(0)
     } catch (error) {
       //toast.error('Something went wrong with registration')
       console.log("error")

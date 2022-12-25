@@ -26,7 +26,7 @@ class About extends Component {
   render() {
     return (<>
   
-<div style={{height:'200px',width:'1000px', float:'Right',marginTop:'10px'}} >
+<div style={{marginTop:'10px'}} >
 <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
   <ol className="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
@@ -35,13 +35,13 @@ class About extends Component {
   </ol>
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img className="d-block w-100" src="sch1.jpg" alt="First slide"></img>
+      <img style={{height:'500px',marginTop:'10px'}} className="d-block w-100" src="corousel/sch1.jpg" alt="First slide"></img>
     </div>
     <div className="carousel-item">
-      <img className="d-block w-100" src="sch2.jpg" alt="Second slide"></img>
+      <img style={{height:'500px',marginTop:'10px'}} className="d-block w-100" src="corousel/sch2.jpg" alt="Second slide"></img>
     </div>
     <div className="carousel-item">
-      <img className="d-block w-100" src="sch3.jpg" alt="Third slide"></img>
+      <img style={{height:'500px',marginTop:'10px'}} className="d-block w-100" src="corousel/sch3.jpg" alt="Third slide"></img>
     </div>
   </div>
   <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

@@ -9,7 +9,7 @@ function FeedbackItem({item,handleDelete}){
 		<div>
 		
 		<Card  reverse={true}>
-		<div className="num-display">{item.rating}</div>
+		<div className="num-display">{item.rating}*</div>
 		<button  onClick={()=>handleDelete(item.id)} className="close" >
 		<FaTimesCircle color='red'/>
 		</button>

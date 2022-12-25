@@ -61,7 +61,7 @@ class Create extends Component {
 
   render() {
     return (
-      <div style={{float:"Right",marginRight:"50px"}}>
+      <div style={{marginRight:"50px"}}>
         <br />
         <div className="">
         <h1>{this.props.name}</h1>
