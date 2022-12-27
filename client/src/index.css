@@ -629,6 +629,11 @@ button {
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
 }
+.log{
+  background-color: lightcyan;
+  padding: 1px;
+}
+
 
 .profileDetailsHeader {
   display: flex;

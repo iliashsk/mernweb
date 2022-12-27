@@ -7,7 +7,7 @@ import { getAuth, updateProfile } from 'firebase/auth'
 const {SubMenu,Item}=Menu;
 
 
-const Header=()=>{
+const UserHeader=()=>{
 
 	const [current,setCurrent]=useState("mail");
 
@@ -38,10 +38,7 @@ const Header=()=>{
      Registration
      <Link to='/regist' ></Link>
     </Item>
-    <Item key="registdetails" icon={<UserAddOutlined />} className="float-right">
-     Registered users
-     <Link to='/registdetails' ></Link>
-    </Item>
+   
     </SubMenu>
    {/* <Item key="login" icon={<UserOutlined />} className="float-right"	>
       <Link to='/login' >Login</Link>
@@ -95,16 +92,14 @@ const Header=()=>{
     </Item>
   </SubMenu>
           
-         <Item key="profile" icon={<AppstoreOutlined/>}  >
-        Profile
-        <Link to='/profile' ></Link> 
-        </Item>
-        <Item key="logout" className="log" icon={<AppstoreOutlined/>} onClick={onLogout} style={{color:"red"}}>
-        Logout
+         <Item key="three" icon={<AppstoreOutlined/>}>
+        Admin Singnin
+        <Link to='/signin' />
+         </Item>
         
-        </Item>
+        
   </Menu>
   
 );
 }
-export default Header;
+export default UserHeader;

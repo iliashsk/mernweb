@@ -9,9 +9,6 @@ const [rating,setRating]=useState(10);
 const [state,setState]=useState({value:""});
 const [disabled,setDisabled]=useState(true);
 
-
-
-
   function handleChange(event) {
     setState({value: event.target.value});
     if(event.target.value.length>10){
@@ -40,7 +37,6 @@ handleAdd(rate);
 setState({value:''});
 
    
-
   }
 
 
@@ -49,7 +45,7 @@ setState({value:''});
       <form onSubmit={handleSubmit}>
       <RatingSelect select={(rating)=>{setRating(rating)}}/>
         <label>
-          Name:
+          Type here:
           <input type="text" value={state.value} onChange={handleChange} placeholder="Type more than 10 character"/>
           
           <Button type='submit' isDisabled={disabled} ></Button>

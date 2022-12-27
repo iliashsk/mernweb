@@ -26,20 +26,35 @@ function App(){
   }, []);
 
   return(
-    <div style={{align:"center"}}>
+    <>
     <h1  style={{color:"#934353"}} align="center">All Users details</h1>
     <p align="center">Total: {feedback.length}</p>
-    <div  className="profileuser"  style={{backgroundColor:"goldenrod"}}>
-{feedback.map(obj=>
+    <div style={{backgroundColor:"goldenrod"}} className="col-6-sm-3">
+    <table className="table table-bordered table-hover">
+    <tr><th scope="row">Sl</th><th scope="row">name</th>
+    <th scope="row">email</th><th scope="row">address</th>
+    <th scope="row">grade</th><th scope="row">subject</th></tr>
+{feedback.map(obj=>{
+  
+  return(
+<tr>
+<td>{}</td>
+<td>{obj.name}</td>
+<td>{obj.email}</td>
+<td>{obj.address}</td>
+<td>{obj.grade}</td>
+<td>{obj.favsub}</td>
+</tr>)
 
-<div key={obj} style={{marginLeft:"20px"}}><h3>{obj.name}</h3><br/>{Object.values(obj).map(key => <div key={key}>{key}</div>)}<br/></div>
+})}
+</table>
+{/*<br/>{Object.values(obj).map(key => <div key={key}>{key}</div>)}<br/>*/}
 
-)}
     
   </div>
     
-    </div>
-    )
+    
+  </>  )
 
 }
 export default App;

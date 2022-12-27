@@ -70,7 +70,79 @@ const Sidebar = ({content}) => {
       <Link to='/rating' ></Link>
     </Item>
     </SubMenu >
-        </Menu>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+    <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+   </Menu>
       </Sider>
       <Layout
         className="site-layout"
@@ -92,19 +164,11 @@ const Sidebar = ({content}) => {
               textAlign: 'center',
               background: "#8908",
               marginTop:"20px",
-
-
             }}
           >
-           
-
             {content}
-            
-
           </div>
         </Content>
-
-
         <Footer
           style={{
             textAlign: 'center',

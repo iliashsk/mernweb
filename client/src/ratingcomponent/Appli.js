@@ -32,10 +32,11 @@ setFeedback([newFeedback, ...feedback]);
       
   }, []);
 
+
 	return(
 		<FeedbackProvider>
 		<div align="center">
-		<Header name="iliash sk" text="you are most welcome"/>
+		<Header name="iliash sk" text="Give Us a feedback here"/>
 		<FeedbackForm />
 		<FeedbackStats number={feedback}/>
 		<FeedbackList feedback={feedback} handleDelete={deleteFeedback}/>

@@ -1,6 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css'
+import UserHeader from './components/nav/UserHeader'
+import Footer from './components/nav/Footer'
+import Side from './components/nav/Side'
+import Sidebar from './components/nav/Sidebar'
 import About from './components/About'
 import Create from './components/Create';
 import Pricing from './components/Pricing';
@@ -21,9 +25,9 @@ import { ToastContainer } from 'react-toastify'
 import ForgotPassword  from  './pages/ForgotPassword'
 import Signin  from  './pages/Signin'
 import SignUp  from  './pages/Signup'
-import Footer from './components/nav/Footer'
-import Side from './components/nav/Side'
-import Sidebar from './components/nav/Sidebar'
+import Profile  from  './pages/Profile'
+import Shop from './shop/Shop'
+
 
 function AppMain(){
 
@@ -38,7 +42,7 @@ if(loggedIn){
       <Route path='/regist' element={<><Header/><Sidebar content={<Create/>}/></>}/>
       <Route path='/registdetails' element={<><Header/><Sidebar content={<App/>}/></>}/>
       <Route path='/weather' element={<><Header/><Sidebar content={<Weather/>}/></>}/> 
-      <Route path='/profile' element={<><Header/><Sidebar content={<App/>}/></>}/>
+      <Route path='/profile' element={<><Header/><Sidebar content={<Profile/>}/></>}/>
       <Route path='/calculator' element={<><Header/><Sidebar content={<Calculator/>}/></>}/>
       <Route path='/setting' element={<><Header/><Sidebar/></>} />
       </Routes>
@@ -54,9 +58,16 @@ else{
     <BrowserRouter>
     <Routes>
    {/* <Route path='/forgot-password' element={<><ForgotPassword/></>} />*/}
-          <Route path='/' element={<><Signin/></>} />
+          <Route path='/' element={<><UserHeader/><Sidebar content={<Shop/>}/></>} />
        { /*  <Route path='/signup' element={<><SignUp/></>} /> */}
-          <Route path='/signin' element={<><Signin/></>} />
+          <Route path='/signin' element={<><UserHeader/><Signin/></>} />
+
+  <Route path='/rating' element={<><UserHeader/><Sidebar content={<Appli/>}/></>}/>
+ <Route path='/regist' element={<><UserHeader/><Sidebar content={<Create/>}/></>}/>
+ <Route path='/weather' element={<><UserHeader/><Sidebar content={<Weather/>}/></>}/> 
+ <Route path='/calculator' element={<><UserHeader/><Sidebar content={<Calculator/>}/></>}/>
+ <Route path='/setting' element={<><UserHeader/><Sidebar/></>} />
+
       </Routes>
       
     </BrowserRouter>

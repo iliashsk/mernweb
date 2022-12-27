@@ -9,10 +9,7 @@
   text-align: center;
 }
 .container{
-  
 align: center;
-
-
 }
 .clock{
   float: right;
@@ -23,8 +20,6 @@ align: center;
   background-color: rgb(100, 200, 0);
   color: purple;
 }
-
-
 
 ///////////////////////////////////////////////////
 .softhead{
@@ -146,7 +141,7 @@ background-color: goldenrod;
 }
 .profileuser{
   height: 600px;
-  width: 400px;
+  width: 700px;
   overflow: scroll;
   margin-left: 400px;
   border: solid 5px;

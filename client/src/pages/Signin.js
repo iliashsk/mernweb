@@ -47,6 +47,7 @@ function SignIn() {
       }
     } catch (error) {
       toast.error('Bad User Credentials')
+      alert("input correct userid and Password")
 
     }
   }
