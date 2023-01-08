@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import {Menu} from 'antd'
-import { HomeOutlined, AppstoreOutlined, SettingOutlined,UserOutlined,UserAddOutlined,DropboxOutlined }
+import { HomeOutlined, AppstoreOutlined, SettingOutlined,UserOutlined,UserAddOutlined,DropboxOutlined,
+ShoppingOutlined }
  from '@ant-design/icons';
 import {Link,useNavigate} from 'react-router-dom'
 import { getAuth, updateProfile } from 'firebase/auth'
@@ -48,13 +49,14 @@ const Header=()=>{
     </Item>
   */ }
 
-    <SubMenu key="SubMenu" title="Setting" icon={<SettingOutlined />}>
-      <Item key="two" icon={<AppstoreOutlined/>}>
-        Setting 1
-        <Link to='/setting' ></Link>
+    <SubMenu key="Shopping" title="Shopping" icon={<ShoppingOutlined />}>
+      <Item key="Electronics" icon={<ShoppingOutlined/>}>
+        Electronics
+        <Link to='/electronics' ></Link>
       </Item>
       <Item key="three" icon={<AppstoreOutlined/>}>
-        Setting 2
+        Add Items
+         <Link to='/additems' ></Link>
       </Item>
       
     </SubMenu>

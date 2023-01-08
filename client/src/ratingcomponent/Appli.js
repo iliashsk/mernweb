@@ -48,5 +48,4 @@ setFeedback([newFeedback, ...feedback]);
 
 }
 
-
 export default Appli;

@@ -15,7 +15,13 @@ router.post("/weath", Weather);
 router.post("/login", Login);
 
 /////////////////////////////////Ecommerce router/////////////////////////////
+import {registerUser,getMe} from '../controllers/userController.js';
 
+//import protect from '../middleware/authMiddleware.js'
+
+router.post('/apis/users', registerUser)
+//router.post('/apis/users/login', loginUser)
+router.get('/apis/users/marks', getMe)
 
 
 export default router;

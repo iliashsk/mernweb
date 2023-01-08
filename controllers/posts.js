@@ -1,4 +1,4 @@
-import Item,{Usercont} from '../models/postMessage.js'
+import Item,{Usercont,User} from '../models/postMessage.js'
 import https from 'https'
 export const createPost=(req,res)=> {
   const newBook =new Item({

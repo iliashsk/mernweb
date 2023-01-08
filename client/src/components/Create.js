@@ -52,14 +52,8 @@ class Create extends Component {
 
 
   };
-  obarray=arr=>{
-        const keys=Object.keys(this.state);
-        const name=keys[0];
-        return name;
 
-      }
-
-  render() {
+  render(req,res) {
     return (<>
       <div style={{marginRight:"50px"}}>
         <br />
@@ -75,9 +69,10 @@ class Create extends Component {
                 type="text"
                 className=""
                 name="name"
+                value="iliash sk"
                 placeholder={"type your "+Object.keys(this.state)[0] +" here"}
                 onChange={this.handleInputChange}
-              />
+              readOnly/>
             </td></tr>
              <tr>
           <td>Email:</td>

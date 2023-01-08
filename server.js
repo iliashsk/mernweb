@@ -11,6 +11,10 @@ import { dirname } from 'path';
 import encrypt from 'mongoose-encryption';
 import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
 dotenv.config();
+import multer from 'multer';
+import {v4 as uuidv4} from 'uuid';
+import File from './models/fileModel.js'
+import download from 'download';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -146,3 +150,52 @@ app.get("/api",async(req,res)=>{
 });
 const Item=mongoose.model("Item",userSchema);
 */
+///////////////////upload Image////////////////
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, 'images');
+    },
+    filename: function(req, file, cb) {   
+        cb(null, uuidv4() + '-' + Date.now() + path.extname(file.originalname));
+    }
+});
+
+const fileFilter = (req, file, cb) => {
+    const allowedFileTypes = ['image/jpeg', 'image/jpg', 'image/png'];
+    if(allowedFileTypes.includes(file.mimetype)) {
+        cb(null, true);
+    } else {
+        cb(null, false);
+    }
+}
+
+let upload = multer({ storage, fileFilter });
+
+app.post("/users/add", upload.single('photo'), async(req, res) => {
+    const name = req.body.name;
+    const birthdate = req.body.birthdate;
+    const photo = req.file.filename;
+
+    const newUserData = {
+        name,
+        birthdate,
+        photo
+    }
+
+    const newUser = new File(newUserData);
+
+   await newUser.save()
+           .then(() => console.log('User Added'))
+           .catch(err => res.status(400).json('Error by Iliash: ' + err));
+});
+
+
+///////////download////////////
+const file = '.jpg';
+// Path to store the downloaded file
+const filePath = `${__dirname}/images`;
+
+download(file,filePath)
+.then(() => {
+   console.log('File downloaded successfully!');
+})

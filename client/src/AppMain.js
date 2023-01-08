@@ -18,7 +18,6 @@ import AboutPage from './ratingcomponent/AboutPage'
 import FeedbackContext,{FeedbackProvider} from './context/FeedbackContext';
 import {useContext} from 'react';
 import Calculator from './components/Calculator'
-import Login from './login/Login'
 import Header from './components/nav/Header'
 import { useAuthStatus } from './hooks/useAuthStatus'
 import { ToastContainer } from 'react-toastify'
@@ -27,7 +26,9 @@ import Signin  from  './pages/Signin'
 import SignUp  from  './pages/Signup'
 import Profile  from  './pages/Profile'
 import Shop from './shop/Shop'
-
+import NewItems from './shop/NewItems'
+import StuRegist from './school/StuRegist'
+import Marks from './school/Marks'
 
 function AppMain(){
 
@@ -44,7 +45,8 @@ if(loggedIn){
       <Route path='/weather' element={<><Header/><Sidebar content={<Weather/>}/></>}/> 
       <Route path='/profile' element={<><Header/><Sidebar content={<Profile/>}/></>}/>
       <Route path='/calculator' element={<><Header/><Sidebar content={<Calculator/>}/></>}/>
-      <Route path='/setting' element={<><Header/><Sidebar/></>} />
+      <Route path='/electronics' element={<><Header/><Sidebar content={<><Shop/></>}/></>} />
+      <Route path='/additems' element={<><Header/><Sidebar content={<><NewItems/></>}/></>} />
       </Routes>
       </BrowserRouter>
     
@@ -64,9 +66,11 @@ else{
 
   <Route path='/rating' element={<><UserHeader/><Sidebar content={<Appli/>}/></>}/>
  <Route path='/regist' element={<><UserHeader/><Sidebar content={<Create/>}/></>}/>
+ <Route path='/sturegist' element={<><UserHeader/><Sidebar content={<StuRegist/>} /></>} />
  <Route path='/weather' element={<><UserHeader/><Sidebar content={<Weather/>}/></>}/> 
  <Route path='/calculator' element={<><UserHeader/><Sidebar content={<Calculator/>}/></>}/>
  <Route path='/setting' element={<><UserHeader/><Sidebar/></>} />
+  <Route path='/marks' element={<><UserHeader/><Sidebar content={<Marks/>}/></>} />
 
       </Routes>
       
