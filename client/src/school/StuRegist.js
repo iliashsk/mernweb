@@ -3,7 +3,7 @@ import axios from 'axios';
 import Button from '../components/Button'
 
 
-class Create extends Component {
+class StuRegist extends Component {
   constructor(props) {
     super(props);
 
@@ -20,6 +20,7 @@ class Create extends Component {
       eng:'',
       ben:'',
       hin:'',
+      cat:''
     };
   }
 
@@ -47,7 +48,9 @@ phys,
 chem,
 eng,
 ben,
-hin} = this.state;
+hin,
+cat
+} = this.state;
 
     const book = {
       name,email,mobile,village,
@@ -58,7 +61,8 @@ phys,
 chem,
 eng,
 ben,
-hin
+hin,
+cat
     };
 
     axios
@@ -83,6 +87,7 @@ hin
       eng:'',
       ben:'',
       hin:'',
+      cat:''
     });
 
   };
@@ -242,6 +247,17 @@ hin
         />
 
     </div>
+     <div class="col-md-4 mb-3">
+      <label for="validationServer02">category</label>
+            <input
+                type="text"
+                className=""
+                name="cat"
+                placeholder={"type your "+Object.keys(this.state)[0] +" here"}
+                onChange={this.handleInputChange}
+        />
+
+    </div>
     
   </div>
 
@@ -253,4 +269,4 @@ hin
   }
 }
 
-export default Create;
+export default StuRegist;

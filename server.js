@@ -191,7 +191,7 @@ app.post("/users/add", upload.single('photo'), async(req, res) => {
 
 
 ///////////download////////////
-const file = '.jpg';
+/*const file = '.jpg';
 // Path to store the downloaded file
 const filePath = `${__dirname}/images`;
 
@@ -199,3 +199,4 @@ download(file,filePath)
 .then(() => {
    console.log('File downloaded successfully!');
 })
+*/

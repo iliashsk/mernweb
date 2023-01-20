@@ -42,9 +42,13 @@ const UserHeader=()=>{
      Student Registration
      <Link to='/sturegist' ></Link>
     </Item>
-             <Item key="Marksheet" icon={<UserAddOutlined />} className="float-right">
+      <Item key="Marksheet" icon={<UserAddOutlined />} className="float-right">
      Marksheet
      <Link to='/marks' ></Link>
+    </Item>
+    <Item key="Marksheet" icon={<UserAddOutlined />} className="float-right">
+     Category
+     <Link to='/category' ></Link>
     </Item>
    
     </SubMenu>
