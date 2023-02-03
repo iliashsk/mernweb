@@ -19,7 +19,6 @@
     "framer-motion": "^7.6.4",
     "google-map-react": "^2.2.0",
     "http-proxy-middleware": "^2.0.6",
-    "ml5": "^0.1.1",
     "mongoose": "^6.6.5",
     "react": "^18.2.0",
     "react-audio-voice-recorder": "^1.0.4",

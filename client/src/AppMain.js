@@ -34,6 +34,7 @@ import Map from './school/Map'
 import Voice from './school/Voice'
 
 
+
 function AppMain(){
 
 const { loggedIn} = useAuthStatus();
@@ -76,6 +77,7 @@ else{
  <Route path='/setting' element={<><UserHeader/><Sidebar/></>} />
   <Route path='/marks' element={<><UserHeader/><Sidebar content={<Marks/>}/></>} />
    <Route path='/category' element={<><UserHeader/><Sidebar content={<><Category/><Map/><Voice/></>}/></>} />
+   
 
       </Routes>
       

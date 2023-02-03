@@ -1,10 +1,11 @@
 
 import React,{useState,useEffect} from 'react';
-
+import {useSearchParams} from 'react-router-dom'
 
 function Marks(){
   var [feedback,setFeedback]=useState([])
-  
+  const [searchParams]=useSearchParams()
+const category=searchParams.get('id')
  
 
   useEffect(() => {
@@ -30,6 +31,7 @@ function Marks(){
 
   return(
     <>
+    <h2>Category:: {category}</h2>
     <h1  style={{color:"#934353"}} align="center">Sudents passed in Exam</h1>
     <p align="center">Total: {feedback.length}</p>
     <div style={{backgroundColor:"goldenrod"}} className="col-6-sm-3">
@@ -37,7 +39,8 @@ function Marks(){
     <tr><th scope="row">Name:</th><th scope="row">Mathematics</th>
     <th scope="row">Physics</th><th scope="row">Chemistry</th>
     <th scope="row">Bengali</th><th scope="row">Hindi</th>
-    <th scope="row">English</th></tr>
+    <th scope="row">English</th><th scope="row">Category</th>
+    </tr>
 {feedback.map(obj=>{
   
   return(
@@ -49,6 +52,7 @@ function Marks(){
 <td>{obj.ben}</td>
 <td>{obj.hin}</td>
 <td>{obj.eng}</td>
+<td>{obj.cat}</td>
 </tr>)
 
 })}

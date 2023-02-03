@@ -38,6 +38,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/",postRoutes);
 
 let port = process.env.PORT||5000;
+app.get("/photo",(req,res)=>{
+  res.sendFile(__dirname+"/images/3b0901a0-1f6e-4f69-8f31-8f6645e81ae5-1675229381917.jpg")
+
+}) ;
 
 //mongoose.connect("mongodb+srv://iliash:Hello123@cluster0.lceburz.mongodb.net/todoList");
 
@@ -63,19 +67,50 @@ app.listen(port, () => {
   console.log('Server Listening on port'+port);
 });
 
+////////////file/photo upload////////////////////
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, 'images');
+    },
+    filename: function(req, file, cb) {   
+        cb(null, uuidv4() + '-' + Date.now() + path.extname(file.originalname));
+    }
+});
 
-/////////////////////////////rough//////////////////
+const fileFilter = (req, file, cb) => {
+    const allowedFileTypes = ['image/jpeg', 'image/jpg', 'image/png'];
+    if(allowedFileTypes.includes(file.mimetype)) {
+        cb(null, true);
+    } else {
+        cb(null, false);
+    }
+}
+
+let upload = multer({ storage, fileFilter });
+
+app.post("/users/add", upload.single('photo'), async(req, res) => {
+    const name = req.body.name;
+    const birthdate = req.body.birthdate;
+    const photo = req.file.filename;
+
+    const newUserData = {
+        name,
+        birthdate,
+        photo
+    }
+
+    const newUser = new File(newUserData);
+
+   await newUser.save()
+           .then(() => console.log('User Added'))
+           .catch(err => res.status(400).json('Error by Iliash in uploading file: ' + err));
+});
+
+
+
 
 
 /*
-
-
-
-app.get("/weather",(req,res)=>{
-  res.sendFile(__dirname+"/index.html")
-
-}) 
-
 app.post("/weather", (req,res)=>{
 
   const city=req.body.cityName;
@@ -151,43 +186,7 @@ app.get("/api",async(req,res)=>{
 const Item=mongoose.model("Item",userSchema);
 */
 ///////////////////upload Image////////////////
-const storage = multer.diskStorage({
-    destination: function(req, file, cb) {
-        cb(null, 'images');
-    },
-    filename: function(req, file, cb) {   
-        cb(null, uuidv4() + '-' + Date.now() + path.extname(file.originalname));
-    }
-});
 
-const fileFilter = (req, file, cb) => {
-    const allowedFileTypes = ['image/jpeg', 'image/jpg', 'image/png'];
-    if(allowedFileTypes.includes(file.mimetype)) {
-        cb(null, true);
-    } else {
-        cb(null, false);
-    }
-}
-
-let upload = multer({ storage, fileFilter });
-
-app.post("/users/add", upload.single('photo'), async(req, res) => {
-    const name = req.body.name;
-    const birthdate = req.body.birthdate;
-    const photo = req.file.filename;
-
-    const newUserData = {
-        name,
-        birthdate,
-        photo
-    }
-
-    const newUser = new File(newUserData);
-
-   await newUser.save()
-           .then(() => console.log('User Added'))
-           .catch(err => res.status(400).json('Error by Iliash: ' + err));
-});
 
 
 ///////////download////////////
