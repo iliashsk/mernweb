@@ -61,6 +61,9 @@ if ( process.env.NODE_ENV ==="production"){
 
     })
 }
+else{
+  res.send({"iliash":"how are you"})
+}
  
 //start your server on port 5000
 app.listen(port, () => {
