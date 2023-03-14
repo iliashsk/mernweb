@@ -2,8 +2,7 @@
 import React, {useEffect} from 'react';
 import FeedbackItem from './FeedbackItem'
 function FeedbackList({feedback,handleDelete}){
-
-		console.log(feedback)
+		
 		return(
 			<div className="list" id="scrolltop">
 			<div >

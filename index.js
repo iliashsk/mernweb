@@ -38,10 +38,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/",postRoutes);
 
 let port = process.env.PORT||5000;
-app.get("/photo",(req,res)=>{
-  res.sendFile(__dirname+"/images/3b0901a0-1f6e-4f69-8f31-8f6645e81ae5-1675229381917.jpg")
 
-}) ;
 
 //mongoose.connect("mongodb+srv://iliash:Hello123@cluster0.lceburz.mongodb.net/todoList");
 
@@ -61,9 +58,7 @@ if ( process.env.NODE_ENV ==="production"){
 
     })
 }
-else{
-  res.send({"iliash":"how are you"})
-}
+
  
 //start your server on port 5000
 app.listen(port, () => {
@@ -94,7 +89,7 @@ let upload = multer({ storage, fileFilter });
 app.post("/users/add", upload.single('photo'), async(req, res) => {
     const name = req.body.name;
     const birthdate = req.body.birthdate;
-    const photo = req.file.filename;
+    const photo = __dirname+"/"+req.file.filename;
 
     const newUserData = {
         name,
@@ -109,7 +104,13 @@ app.post("/users/add", upload.single('photo'), async(req, res) => {
            .catch(err => res.status(400).json('Error by Iliash in uploading file: ' + err));
 });
 
+app.get("/photo",(req,res)=>{
+  File.find({},(err,files)=>{
+res.sendFile(__dirname+'/index.html')
+  })
+  
 
+}) ;
 
 
 

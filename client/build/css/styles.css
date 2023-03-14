@@ -9,10 +9,7 @@
   text-align: center;
 }
 .container{
-  
 align: center;
-
-
 }
 .clock{
   float: right;
@@ -23,8 +20,6 @@ align: center;
   background-color: rgb(100, 200, 0);
   color: purple;
 }
-
-
 
 ///////////////////////////////////////////////////
 .softhead{
@@ -97,23 +92,23 @@ background-color: goldenrod;
   color: red;
   text-decoration: none;
   padding: 15px 26px;
-  position: relative;
+  position: ralative;
   display: inline-block;
   border-radius: 2px;
 
 }
 .card.reverse{
-    color: yellow;
+    color:darkblue;
     background-color: goldenrod;
   text-decoration: none;
   padding: 15px 26px;
-  position: relative;
+  position: initial;
   display: inline-block;
   border-radius: 2px;
   align: center;
 }
 .card.reverse:hover{
-  background: blue;
+  background: lightgreen;
 }
 .card.close{
    border-radius: 30%;
@@ -124,12 +119,7 @@ background-color: goldenrod;
 }
 
 .num-display{
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  padding: 5px 10px;
-  border-radius: 50%;
-  background: green;
+  position: initial;
   color: white;
 }
 .close{
@@ -150,8 +140,8 @@ background-color: goldenrod;
 
 }
 .profileuser{
-  height: 650px;
-  width: 400px;
+  height: 600px;
+  width: 700px;
   overflow: scroll;
   margin-left: 400px;
   border: solid 5px;
@@ -187,4 +177,12 @@ margin-right: 50px;
 .active{
   background: yellow;
   color: red;
+}
+.footer{
+position:relative;
+left:0;
+bottom:0;
+right:0;
+padding-bottom:60px;
+height: calc(100% - 60px);
 }

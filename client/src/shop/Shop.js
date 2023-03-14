@@ -11,6 +11,7 @@ navigate('/regist:name="Iliash"')
   }
 	
 	return(<>
+  <h1>JONOPRIYO TEXTILE</h1>
 	<div class="container">
       <div class="card-deck mb-3 text-center">
         <div class="card mb-4 box-shadow">
