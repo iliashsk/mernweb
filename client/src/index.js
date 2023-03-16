@@ -18,11 +18,8 @@ if(10===20/2){
   root.render(
 
     
-       <>
-       <br/>
-     
+       <>     
     <AppMain/>
-       
     </>
     )}
     else{

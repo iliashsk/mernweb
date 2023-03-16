@@ -65,18 +65,18 @@ else{
     <BrowserRouter>
     <Routes>
    {/* <Route path='/forgot-password' element={<><ForgotPassword/></>} />*/}
-          <Route path='/' element={<><UserHeader/><Sidebar content={<Shop/>}/></>} />
+          <Route path='/' element={<><UserHeader/><Shop/></>} />
        { /*  <Route path='/signup' element={<><SignUp/></>} /> */}
           <Route path='/signin' element={<><UserHeader/><Signin/></>} />
 
-  <Route path='/rating' element={<><UserHeader/><Sidebar content={<Appli/>}/></>}/>
- <Route path='/regist' element={<><UserHeader/><Sidebar content={<Create/>}/></>}/>
- <Route path='/sturegist' element={<><UserHeader/><Sidebar content={<StuRegist/>} /></>} />
- <Route path='/weather' element={<><UserHeader/><Sidebar content={<Weather/>}/></>}/> 
- <Route path='/calculator' element={<><UserHeader/><Sidebar content={<Calculator/>}/></>}/>
+  <Route path='/rating' element={<><UserHeader/><Appli/></>}/>
+ <Route path='/regist' element={<><UserHeader/><Create/></>}/>
+ <Route path='/sturegist' element={<><UserHeader/><StuRegist/></>} />
+ <Route path='/weather' element={<><UserHeader/><Weather/></>}/> 
+ <Route path='/calculator' element={<><UserHeader/><Calculator/></>}/>
  <Route path='/setting' element={<><UserHeader/><Sidebar/></>} />
-  <Route path='/marks' element={<><UserHeader/><Sidebar content={<Marks/>}/></>} />
-   <Route path='/category' element={<><UserHeader/><Sidebar content={<><Category/><Map/><Voice/></>}/></>} />
+  <Route path='/marks' element={<><UserHeader/><Marks/>}/></>} />
+   <Route path='/category' element={<><UserHeader/><Category/><Map/><Voice/></>} />
    
 
       </Routes>

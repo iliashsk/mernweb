@@ -173,7 +173,6 @@ cat
     </div>
     
   </div>
-{/*//////////////////////////////*/}
 
         <h6>Student Marks</h6>
   <div class="form-row">
@@ -258,12 +257,13 @@ cat
         />
 
     </div>
-    
   </div>
 
-
+<div align='center'>
   <button class="btn btn-primary" type="submit">Submit form</button>
+  </div>
 </form>
+
       </>
     );
   }

@@ -6,65 +6,142 @@ const Shop=()=>{
 const navigate=useNavigate()
   const onSubmit=()=>{
     return(<>
-navigate('/regist:name="Iliash"')
+navigate('/regist');
       </>)
   }
 	
 	return(<>
-  <h1>JONOPRIYO TEXTILE</h1>
+  <br/><br/>
+  <h1 align='center'>Check Out Our All Products</h1>
 	<div class="container">
-      <div class="card-deck mb-3 text-center">
-        <div class="card mb-4 box-shadow">
-        <form onSubmit={onSubmit} >
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal">Free</h4>
+   <div class="card-deck mb-3 text-center">
+
+    
+        <div class="card mb-4 box-shadow" style={{backgroundImage:' linear-gradient(to right,lightgreen,lightblue,#aa7566)'}}>
+      <form onSubmit={onSubmit} >
+          <div><img src="photo/1.jpeg" height="200px" width="320px"></img>
           </div>
-          <div  style={{float:"right"}}><img src="photo/pend.jpg" width="150px" height="200px"></img></div>
-          <div class="card-body">
-            <h3>Pendrive</h3>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>10 users included</li>
-              <li>2 GB of storage</li>
-              <li>Email support</li>
-              <li>Help center access</li>
-            </ul>
+          <p>Price:contact to seller</p>
+           <div class="card-body">
             <button type="submit" class="btn btn-lg btn-block btn-outline-primary" name="Iliash sk">Buy</button>
-          </div>
+           </div>
            </form>
         </div>
-       
-        <div class="card mb-4 box-shadow">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal">Pro</h4>
+
+        <div class="card mb-4 box-shadow" style={{backgroundImage:' linear-gradient(to right,lightgreen,lightblue,#aa7566)'}}>
+      <form onSubmit={onSubmit} >
+          <div><img src="photo/2.jpeg" height="200px" width="320px"></img>
           </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>20 users included</li>
-              <li>10 GB of storage</li>
-              <li>Priority email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
-          </div>
+          <p>Price:contact to seller</p>
+           <div class="card-body">
+            <button type="submit" class="btn btn-lg btn-block btn-outline-primary" name="Iliash sk">Buy</button>
+           </div>
+           </form>
         </div>
-        <div class="card mb-4 box-shadow">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal">Enterprise</h4>
+
+        <div class="card mb-4 box-shadow" style={{backgroundImage:' linear-gradient(to right,lightgreen,lightblue,#aa7566)'}}>
+      <form onSubmit={onSubmit} >
+          <div><img src="photo/3.jpeg" height="200px" width="320px"></img>
           </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>30 users included</li>
-              <li>15 GB of storage</li>
-              <li>Phone and email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
-          </div>
+          <p>Price:contact to seller</p>
+           <div class="card-body">
+            <button type="submit" class="btn btn-lg btn-block btn-outline-primary" name="Iliash sk">Buy</button>
+           </div>
+           </form>
         </div>
+
+
+
+      
+
       </div>
+
+      <div class="card-deck mb-3 text-center">
+
+    
+        <div class="card mb-4 box-shadow" style={{backgroundImage:' linear-gradient(to right,lightgreen,lightblue,#aa7566)'}}>
+      <form onSubmit={onSubmit} >
+          <div><img src="photo/4.jpeg" height="200px" width="320px"></img>
+          </div>
+          <p>Price:contact to seller</p>
+           <div class="card-body">
+            <button type="submit" class="btn btn-lg btn-block btn-outline-primary" name="Iliash sk">Buy</button>
+           </div>
+           </form>
+        </div>
+
+        <div class="card mb-4 box-shadow" style={{backgroundImage:' linear-gradient(to right,lightgreen,lightblue,#aa7566)'}}>
+      <form onSubmit={onSubmit} >
+          <div><img src="photo/5.jpeg" height="200px" width="320px"></img>
+          </div>
+          <p>Price:contact to seller</p>
+           <div class="card-body">
+            <button type="submit" class="btn btn-lg btn-block btn-outline-primary" name="Iliash sk">Buy</button>
+           </div>
+           </form>
+        </div>
+
+        <div class="card mb-4 box-shadow" style={{backgroundImage:' linear-gradient(to right,lightgreen,lightblue,#aa7566)'}}>
+      <form onSubmit={onSubmit} >
+          <div><img src="photo/6.jpeg" height="200px" width="320px"></img>
+          </div>
+          <p>Price:contact to seller</p>
+           <div class="card-body">
+            <button type="submit" class="btn btn-lg btn-block btn-outline-primary" name="Iliash sk">Buy</button>
+           </div>
+           </form>
+        </div>
+
+        
+
+      
+
       </div>
+
+      <div class="card-deck mb-3 text-center">
+
+    
+        <div class="card mb-4 box-shadow" style={{backgroundImage:' linear-gradient(to right,lightgreen,lightblue,#aa7566)'}}>
+      <form onSubmit={onSubmit} >
+          <div><img src="photo/7.jpeg" height="200px" width="320px"></img>
+          </div>
+          <p>Price:contact to seller</p>
+           <div class="card-body">
+            <button type="submit" class="btn btn-lg btn-block btn-outline-primary" name="Iliash sk">Buy</button>
+           </div>
+           </form>
+        </div>
+
+        <div class="card mb-4 box-shadow" style={{backgroundImage:' linear-gradient(to right,lightgreen,lightblue,#aa7566)'}}>
+      <form onSubmit={onSubmit} >
+          <div><img src="photo/8.jpeg" height="200px" width="320px"></img>
+          </div>
+          <p>Price:contact to seller</p>
+           <div class="card-body">
+            <button type="submit" class="btn btn-lg btn-block btn-outline-primary" name="Iliash sk">Buy</button>
+           </div>
+           </form>
+        </div>
+
+        <div class="card mb-4 box-shadow" style={{backgroundImage:' linear-gradient(to right,lightgreen,lightblue,#aa7566)'}}>
+      <form onSubmit={onSubmit} >
+          <div><img src="photo/9.jpeg" height="200px" width="320px"></img>
+          </div>
+          <p>Price:contact to seller</p>
+           <div class="card-body">
+            <button type="submit" class="btn btn-lg btn-block btn-outline-primary" name="Iliash sk">Buy</button>
+           </div>
+           </form>
+        </div>
+
+        
+
+      
+
+      </div>
+    </div>
+
+
 	</>)
 }
 export default Shop;
