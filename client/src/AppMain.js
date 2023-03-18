@@ -13,6 +13,7 @@ import Appli from './ratingcomponent/Appli';
 import Weather from './components/Weather';
 import App from './components/App';
 import Button from './components/Button';
+import Contact from './components/Contact'
 import Layout from './Layout'
 import AboutPage from './ratingcomponent/AboutPage'
 import FeedbackContext,{FeedbackProvider} from './context/FeedbackContext';
@@ -65,7 +66,7 @@ else{
     <BrowserRouter>
     <Routes>
    {/* <Route path='/forgot-password' element={<><ForgotPassword/></>} />*/}
-          <Route path='/' element={<><UserHeader/><Shop/></>} />
+          <Route path='/' element={<><UserHeader/><About/><Shop/></>} />
        { /*  <Route path='/signup' element={<><SignUp/></>} /> */}
           <Route path='/signin' element={<><UserHeader/><Signin/></>} />
 
@@ -77,6 +78,7 @@ else{
  <Route path='/setting' element={<><UserHeader/><Sidebar/></>} />
   <Route path='/marks' element={<><UserHeader/><Marks/>}/></>} />
    <Route path='/category' element={<><UserHeader/><Category/><Map/><Voice/></>} />
+   <Route path='/contact' element={<><UserHeader/><Contact/></>} />
    
 
       </Routes>

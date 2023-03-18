@@ -19,7 +19,7 @@ navigate('/regist');
     
         <div class="card mb-4 box-shadow" style={{backgroundImage:' linear-gradient(to right,lightgreen,lightblue,#aa7566)'}}>
       <form onSubmit={onSubmit} >
-          <div><img src="photo/1.jpeg" height="200px" width="320px"></img>
+          <div><img src="photo/1.jpeg" height="100%" width="100%"></img>
           </div>
           <p>Price:contact to seller</p>
            <div class="card-body">
@@ -30,7 +30,7 @@ navigate('/regist');
 
         <div class="card mb-4 box-shadow" style={{backgroundImage:' linear-gradient(to right,lightgreen,lightblue,#aa7566)'}}>
       <form onSubmit={onSubmit} >
-          <div><img src="photo/2.jpeg" height="200px" width="320px"></img>
+          <div><img src="photo/2.jpeg" height="100%" width="100%"></img>
           </div>
           <p>Price:contact to seller</p>
            <div class="card-body">
@@ -41,7 +41,7 @@ navigate('/regist');
 
         <div class="card mb-4 box-shadow" style={{backgroundImage:' linear-gradient(to right,lightgreen,lightblue,#aa7566)'}}>
       <form onSubmit={onSubmit} >
-          <div><img src="photo/3.jpeg" height="200px" width="320px"></img>
+          <div><img src="photo/3.jpeg" height="100%" width="100%"></img>
           </div>
           <p>Price:contact to seller</p>
            <div class="card-body">
@@ -61,7 +61,7 @@ navigate('/regist');
     
         <div class="card mb-4 box-shadow" style={{backgroundImage:' linear-gradient(to right,lightgreen,lightblue,#aa7566)'}}>
       <form onSubmit={onSubmit} >
-          <div><img src="photo/4.jpeg" height="200px" width="320px"></img>
+          <div><img src="photo/4.jpeg" height="100%" width="100%"></img>
           </div>
           <p>Price:contact to seller</p>
            <div class="card-body">
@@ -72,7 +72,7 @@ navigate('/regist');
 
         <div class="card mb-4 box-shadow" style={{backgroundImage:' linear-gradient(to right,lightgreen,lightblue,#aa7566)'}}>
       <form onSubmit={onSubmit} >
-          <div><img src="photo/5.jpeg" height="200px" width="320px"></img>
+          <div><img src="photo/5.jpeg" height="100%" width="100%"></img>
           </div>
           <p>Price:contact to seller</p>
            <div class="card-body">
@@ -83,7 +83,7 @@ navigate('/regist');
 
         <div class="card mb-4 box-shadow" style={{backgroundImage:' linear-gradient(to right,lightgreen,lightblue,#aa7566)'}}>
       <form onSubmit={onSubmit} >
-          <div><img src="photo/6.jpeg" height="200px" width="320px"></img>
+          <div><img src="photo/6.jpeg" height="100%" width="100%"></img>
           </div>
           <p>Price:contact to seller</p>
            <div class="card-body">
@@ -103,7 +103,7 @@ navigate('/regist');
     
         <div class="card mb-4 box-shadow" style={{backgroundImage:' linear-gradient(to right,lightgreen,lightblue,#aa7566)'}}>
       <form onSubmit={onSubmit} >
-          <div><img src="photo/7.jpeg" height="200px" width="320px"></img>
+          <div><img src="photo/7.jpeg" height="100%" width="100%"></img>
           </div>
           <p>Price:contact to seller</p>
            <div class="card-body">
@@ -114,7 +114,7 @@ navigate('/regist');
 
         <div class="card mb-4 box-shadow" style={{backgroundImage:' linear-gradient(to right,lightgreen,lightblue,#aa7566)'}}>
       <form onSubmit={onSubmit} >
-          <div><img src="photo/8.jpeg" height="200px" width="320px"></img>
+          <div><img src="photo/8.jpeg" height="100%" width="100%"></img>
           </div>
           <p>Price:contact to seller</p>
            <div class="card-body">
@@ -125,7 +125,7 @@ navigate('/regist');
 
         <div class="card mb-4 box-shadow" style={{backgroundImage:' linear-gradient(to right,lightgreen,lightblue,#aa7566)'}}>
       <form onSubmit={onSubmit} >
-          <div><img src="photo/9.jpeg" height="200px" width="320px"></img>
+          <div><img src="photo/9.jpeg" height="100%" width="100%"></img>
           </div>
           <p>Price:contact to seller</p>
            <div class="card-body">

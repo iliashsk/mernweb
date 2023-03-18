@@ -24,6 +24,11 @@ class About extends Component {
 
   render() {
     return (<>
+
+      <br/><br/><br/>
+      <h2 align='center' style={{color:'blue',fontSize:'30px'}}>JONOPRIYO TEXTILE </h2>
+      <h3 align='center' style={{color:'red',fontSize:'20px'}}>Kaliachak </h3>
+      <h4 align='center' style={{color:'violet',fontSize:'15px'}}>Good Quality Makes Priority </h4>
   
 <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel" style={{zIndex:'0'}}>
   <ol className="carousel-indicators">

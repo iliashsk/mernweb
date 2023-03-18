@@ -57,16 +57,12 @@ const UserHeader=()=>{
     </Item>
   */ }
 
-    <SubMenu key="SubMenu" title="Setting" icon={<SettingOutlined />}>
-      <Item key="two" icon={<AppstoreOutlined/>}>
-        Setting 1
-        <Link to='/setting' ></Link>
-      </Item>
-      <Item key="three" icon={<AppstoreOutlined/>}>
-        Setting 2
+    
+      <Item key='contact' icon={<AppstoreOutlined/>}>
+      Contact Us
+        <Link to='/contact' ></Link>
       </Item>
       
-    </SubMenu>
     <SubMenu key="Student" title="Admission" icon={<DropboxOutlined />}>
         <Item key="two" icon={<AppstoreOutlined/>}>
         Admission
