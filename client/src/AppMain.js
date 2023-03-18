@@ -5,7 +5,7 @@ import UserHeader from './components/nav/UserHeader'
 import Footer from './components/nav/Footer'
 import Side from './components/nav/Side'
 import Sidebar from './components/nav/Sidebar'
-import About from './components/About'
+import Carousel from './components/Carousel'
 import Create from './components/Create';
 import Pricing from './components/Pricing';
 import Dbdata from './components/Dbdata';
@@ -44,7 +44,7 @@ if(loggedIn){
      <FeedbackProvider>
     <div className="main"><BrowserRouter>
       <Routes>
-      <Route path='/' element={<><div><Header/></div><div><Sidebar content={<><About/><AboutPage/></>}/></div></>} />
+      <Route path='/' element={<><div><Header/></div><div><Sidebar content={<><Carousel/><AboutPage/></>}/></div></>} />
       <Route path='/rating' element={<><Header/><Sidebar content={<Appli/>}/></>}/>
       <Route path='/regist' element={<><Header/><Sidebar content={<Create/>}/></>}/>
       <Route path='/registdetails' element={<><Header/><Sidebar content={<App/>}/></>}/>
@@ -66,7 +66,7 @@ else{
     <BrowserRouter>
     <Routes>
    {/* <Route path='/forgot-password' element={<><ForgotPassword/></>} />*/}
-          <Route path='/' element={<><UserHeader/><About/><Shop/></>} />
+          <Route path='/' element={<><UserHeader/><Carousel/><Shop/></>} />
        { /*  <Route path='/signup' element={<><SignUp/></>} /> */}
           <Route path='/signin' element={<><UserHeader/><Signin/></>} />
 
