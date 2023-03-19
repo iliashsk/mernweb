@@ -54,10 +54,9 @@ function SignIn() {
 
   return (
     <>
+    <br/><br/><br/>
       <div className='pageContainer'>
-        <header>
-          <p className='pageHeader'>Welcome Back!</p>
-        </header>
+        
 
         <form onSubmit={onSubmit}>
           <input

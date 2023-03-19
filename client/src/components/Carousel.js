@@ -13,21 +13,18 @@ class Carousel extends Component {
 
       <br/><br/><br/>
 
-      <h4 style={{textAlign:'right',color:'violet'}}><PhoneOutlined/>9563734519</h4>
+      <h4 style={{textAlign:'right',color:'black'}}><PhoneOutlined/>9563734519</h4>
 
-      <h2 align='center' style={{color:'blue',fontSize:'30px'}}>
-       <div>
-       <img
-        src="photo/logo.jpeg" 
-       alt="logo">
-       </img>
-       </div>
-      </h2>
+      <div align='center' >
+       
+       <img src="photo/logo.jpeg" alt="logo" style={(window.innerwidth<720)?{width:'425px',marginLeft:'5px'}:{width:'425px'}}></img>
+       
+      </div>
 
       <h3 align='center' style={{color:'red',fontSize:'20px'}}>Kaliachak </h3>
       <h4 align='center' style={{color:'violet',fontSize:'15px'}}>Good Quality Makes Priority </h4>
   
-<div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel" style={{zIndex:'0',marginLeft:'30px',marginRight:'30px'}}>
+<div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel" style={(window.innerwidth>720)?{marginLeft:'20px',marginRight:'20px'}:{marginLeft:'0px',marginRight:'0px'}}>
   <ol className="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -35,13 +32,13 @@ class Carousel extends Component {
   </ol>
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img style={{height:'500px',marginTop:'10px'}} className="d-block w-100" src="carousel/jono1.jpeg" alt="First slide"></img>
+      <img style={{height:'500px'}} className="d-block w-100" src="carousel/jono1.jpeg" alt="First slide"></img>
     </div>
     <div className="carousel-item">
-      <img style={{height:'500px',marginTop:'10px'}} className="d-block w-100" src="carousel/jono2.jpeg" alt="Second slide"></img>
+      <img style={{height:'500px'}} className="d-block w-100" src="carousel/jono2.jpeg" alt="Second slide"></img>
     </div>
     <div className="carousel-item">
-      <img style={{height:'500px',marginTop:'10px'}} className="d-block w-100" src="carousel/jono3.jpeg" alt="Third slide"></img>
+      <img style={{height:'500px'}} className="d-block w-100" src="carousel/jono3.jpeg" alt="Third slide"></img>
     </div>
   </div>
   <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" id='carous'>

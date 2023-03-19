@@ -106,7 +106,8 @@ app.post("/users/add", upload.single('photo'), async(req, res) => {
 
 app.get("/photo",(req,res)=>{
   File.find({},(err,files)=>{
-res.sendFile(__dirname+'/index.html')
+  
+res.sendFile(__dirname+'/images/'+files[2].photo)
   })
   
 
