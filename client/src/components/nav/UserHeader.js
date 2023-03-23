@@ -33,7 +33,11 @@ const UserHeader=()=>{
     home
       <Link to='/' ></Link>
     </Item>
-     <SubMenu key="RegistDetails" title="User Corner" icon={<SettingOutlined />}>
+      <Item key='contact' icon={<AppstoreOutlined/>}>
+      Contact Us
+        <Link to='/contact' ></Link>
+      </Item>
+     {/*<SubMenu key="RegistDetails" title="User Corner" icon={<SettingOutlined />}>
      <Item key="register" icon={<UserAddOutlined />} className="float-right">
      Registration
      <Link to='/regist' ></Link>
@@ -52,16 +56,13 @@ const UserHeader=()=>{
     </Item>
    
     </SubMenu>
-   {/* <Item key="login" icon={<UserOutlined />} className="float-right"	>
+    <Item key="login" icon={<UserOutlined />} className="float-right"	>
       <Link to='/login' >Login</Link>
     </Item>
-  */ }
+ 
 
     
-      <Item key='contact' icon={<AppstoreOutlined/>}>
-      Contact Us
-        <Link to='/contact' ></Link>
-      </Item>
+    
       
     <SubMenu key="Student" title="Admission" icon={<DropboxOutlined />}>
         <Item key="two" icon={<AppstoreOutlined/>}>
@@ -85,6 +86,7 @@ const UserHeader=()=>{
       </SubMenu>
       
     </SubMenu>
+     
     <Item key="rating" icon={<HomeOutlined />}>
     Rate Here
       <Link to='/rating' ></Link>
@@ -99,7 +101,7 @@ const UserHeader=()=>{
       <Link to='/calculator' ></Link>
     </Item>
   </SubMenu>
-  
+  */ }
           
          <Item key="three" icon={<AppstoreOutlined/>}>
         Admin Singnin

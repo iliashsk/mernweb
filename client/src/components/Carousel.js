@@ -13,11 +13,11 @@ class Carousel extends Component {
 
       <br/><br/><br/>
 
-      <h4 style={{textAlign:'right',color:'black'}}><PhoneOutlined/>9563734519</h4>
+      <a href='tel:9563734519' align='right'><h1 >Call:9563734519</h1></a>
 
       <div align='center' >
        
-       <img src="photo/logo.jpeg" alt="logo" style={(window.innerwidth<720)?{width:'425px',marginLeft:'5px'}:{width:'425px'}}></img>
+       <img src="photo/logo.jpeg" alt="logo" style={(window.innerwidth<720)?{width:'420px',marginRight:'5px'}:{width:'425px'}}></img>
        
       </div>
 

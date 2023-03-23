@@ -24,7 +24,7 @@ function Contact(props){
        
           	<h3>Hatkhola-Jamaipara Road,<br/> Chandni Market, <br/>Near by- 5-Tala jame-Masjid,<br/> Kaliachak, India, West Bengal</h3>         	
           	<h3><MailOutlined/>  jonopriyotextile@gmail.com</h3>
-          	<h3 style={{color:"blue"}}><PhoneOutlined/> 9563734519</h3>
+          	<a href='tel:9563734519'><h1 >Call:9563734519</h1></a>
           
           </div>
         </div>
@@ -35,7 +35,7 @@ function Contact(props){
         <div class="row">
           <div class="col-md-4">
             <h2>Social Media Link</h2>
-            <a href="https://www.facebook.com/jonopriyotextile" target='blank' style={{color:'red'}} ><FacebookOutlined/> facebook.com/jonopriyotextile</a>
+            <a href="https://www.facebook.com/jonopriyotextile" target='blank' style={{color:'green'}} ><FacebookOutlined style={{fontSize:'100px', width:'100px',color:'green'}}/></a>
           
           </div>
           <div class="col-md-4">
