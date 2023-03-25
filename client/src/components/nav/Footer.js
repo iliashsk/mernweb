@@ -1,19 +1,120 @@
+import React,{useState,useEffect} from 'react'
 
-import FeedbackContext from '../../context/FeedbackContext';
-import {useContext} from 'react';
 
 function Footer(){
-const {feedback}=useContext(FeedbackContext);
+  const [isDesktop,setIsDesktop]=useState();
+    useEffect(()=>{
+        if(window.innerWidth<720){
+          setIsDesktop(false)
+        }else{
+          setIsDesktop(true)
+        }
+      },[])
+
 
   
 return(<>
       
 
-<div style={{backgroundColor:"lightCyan",height:"100px"}} className="footer">
-<p align="center">{feedback[0].text}</p>
-<p align="center">mobile: {feedback[0].mobile}</p>
+<div className="b-example-divider"></div>
 
-  </div>
+
+<div className="container">
+  <footer className="py-5">
+  <div className="row">
+  {isDesktop?
+    (<>
+    <div className="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul className="nav flex-column">
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-muted">Home</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Features</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Pricing</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">FAQs</a></li>
+          <li className="nav-item mb-2"><a href="/contact" className="nav-link p-0 text-muted">About</a></li>
+        </ul>
+      </div>
+
+      <div className="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul className="nav flex-column">
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-muted">Home</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Features</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Pricing</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">FAQs</a></li>
+          <li className="nav-item mb-2"><a href="/contact" className="nav-link p-0 text-muted">About</a></li>
+        </ul>
+      </div>
+
+      <div className="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul className="nav flex-column">
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-muted">Home</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Features</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Pricing</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">FAQs</a></li>
+          <li className="nav-item mb-2"><a href="/contact" className="nav-link p-0 text-muted">About</a></li>
+        </ul>
+      </div>
+
+      <div className="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul className="nav flex-column">
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-muted">Home</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Features</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Pricing</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">FAQs</a></li>
+          <li className="nav-item mb-2"><a href="/contact" className="nav-link p-0 text-muted">About</a></li>
+        </ul>
+      </div>
+
+      <div className="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul className="nav flex-column">
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-muted">Home</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Features</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Pricing</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">FAQs</a></li>
+          <li className="nav-item mb-2"><a href="/contact" className="nav-link p-0 text-muted">About</a></li>
+        </ul>
+      </div>
+
+      <div className="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul className="nav flex-column">
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-muted">Home</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Features</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Pricing</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">FAQs</a></li>
+          <li className="nav-item mb-2"><a href="/contact" className="nav-link p-0 text-muted">About</a></li>
+        </ul>
+      </div></>):(<>
+      <div className="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul className="nav flex-column">
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-muted">Home</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Features</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Pricing</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">FAQs</a></li>
+          <li className="nav-item mb-2"><a href="/contact" className="nav-link p-0 text-muted">About</a></li>
+        </ul>
+      </div>
+
+      <div className="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul className="nav flex-column">
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-muted">Home</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Features</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Pricing</a></li>
+          <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">FAQs</a></li>
+          <li className="nav-item mb-2"><a href="/contact" className="nav-link p-0 text-muted">About</a></li>
+        </ul>
+      </div></>)}
+      </div>
+
+
+  </footer>
+</div>
   
 </>
   )

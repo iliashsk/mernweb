@@ -12,8 +12,15 @@ class Carousel extends Component {
     return (<>
 
       <br/><br/><br/>
+      
+  
+     <div class ="wrapper">
 
-      <a href='tel:9563734519' align='right'><h1 >Call:9563734519</h1></a>
+  <button style={{position:'absolute',center: '0', marginRight:'150px'}}><img src='photo/logojt.jpeg' heigt="50px" width="50px" alt='jt' align='center'></img></button>
+
+  <a href='tel:9563734519' align='right' style={{float:'right',marginLeft:'auto'}}><h1 >Call:9563734519</h1></a>
+
+</div>
 
       <div align='center' >
        

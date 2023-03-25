@@ -186,3 +186,10 @@ right:0;
 padding-bottom:60px;
 height: calc(100% - 60px);
 }
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}

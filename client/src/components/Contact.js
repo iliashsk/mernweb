@@ -30,7 +30,7 @@ function Contact(props){
         </div>
       </div>
 
-      <div class="container">
+      <div class="container" style={{backgroundColor:'lightcyan', height:'500px'}}>
        
         <div class="row">
           <div class="col-md-4">
@@ -47,7 +47,7 @@ function Contact(props){
             <p>Siliguri </p>
            
           </div>
-          <div class="col-md-4" height='400px'>
+          <div class="col-md-4" height='400px' >
             <h2>Our Location</h2>
          <GoogleMapReact
         bootstrapURLKeys={{ key: "" }}
@@ -69,6 +69,7 @@ function Contact(props){
           </div>
         </div>
         </div>
+        <br/><br/>
 </>);
 }
 export default Contact;

@@ -102,7 +102,7 @@ app.post("/users/add", upload.single('photo'), async(req, res) => {
    await newUser.save()
            .then(() => console.log('User Added'))
            .catch(err => res.status(400).json('Error by Iliash in uploading file: ' + err));
-});
+}); 
 
 app.get("/photo",(req,res)=>{
   File.find({},(err,files)=>{

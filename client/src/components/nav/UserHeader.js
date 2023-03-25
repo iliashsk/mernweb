@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import {Menu} from 'antd'
 import { HomeOutlined, AppstoreOutlined, SettingOutlined,UserOutlined,UserAddOutlined,DropboxOutlined }
  from '@ant-design/icons';
@@ -10,6 +10,8 @@ const {SubMenu,Item}=Menu;
 const UserHeader=()=>{
 
 	const [current,setCurrent]=useState("mail");
+   const [isDesktop,setIsDesktop]=useState()
+
 
 	const handleClick=(e)=>{
 		console.log(e.key);
@@ -24,9 +26,17 @@ const UserHeader=()=>{
     navigate(0);
   }
 
-	return(
-    
-  <Menu onClick={handleClick} defaultSelectedKeys={[current]} mode="horizontal"
+  useEffect(()=>{
+  if (window.innerWidth < 720) {
+      setIsDesktop(false);
+  }else{
+    setIsDesktop(true);
+  }
+},[])
+
+	return(<>
+    {isDesktop ?
+     (<Menu onClick={handleClick} defaultSelectedKeys={[current]} mode="horizontal"
    style={{position:"fixed",background:"cyan",width:"100%",zIndex:'10'}} >
     
     <Item key="home" icon={<HomeOutlined />}>
@@ -37,6 +47,49 @@ const UserHeader=()=>{
       Contact Us
         <Link to='/contact' ></Link>
       </Item>
+      <Item key="saree" icon={<AppstoreOutlined/>}>
+        Sarees
+        <Link to='/saree' />
+         </Item>
+      <Item key="three" icon={<AppstoreOutlined/>}>
+        Admin Singnin
+        <Link to='/signin' />
+         </Item>
+        
+        
+  </Menu>):  (
+    <Menu onClick={handleClick} defaultSelectedKeys={[current]} mode="horizontal"
+   style={{position:"fixed",width:"100%",zIndex:'10'}}  className='grad'>
+    
+  <SubMenu key="appstore" title={<AppstoreOutlined style={{fontSize:'40px'}}/>} style={{marginLeft:'auto'}}>
+  <Item key="home" icon={<HomeOutlined />}>
+    home
+      <Link to='/' ></Link>
+    </Item>
+
+      <Item key='contact' icon={<AppstoreOutlined/>}>
+      Contact Us
+        <Link to='/contact' ></Link>
+      </Item>
+
+      <Item key="saree" icon={<AppstoreOutlined/>}>
+        Sarees
+        <Link to='/saree' />
+         </Item>
+
+      <Item key="three" icon={<AppstoreOutlined/>}>
+        Admin Singnin
+        <Link to='/signin' />
+         </Item>
+         
+         </SubMenu>
+         </Menu>
+    )
+  }
+  
+</>);
+}
+export default UserHeader;
      {/*<SubMenu key="RegistDetails" title="User Corner" icon={<SettingOutlined />}>
      <Item key="register" icon={<UserAddOutlined />} className="float-right">
      Registration
@@ -103,14 +156,5 @@ const UserHeader=()=>{
   </SubMenu>
   */ }
           
-         <Item key="three" icon={<AppstoreOutlined/>}>
-        Admin Singnin
-        <Link to='/signin' />
-         </Item>
-        
-        
-  </Menu>
-  
-);
-}
-export default UserHeader;
+         
+
