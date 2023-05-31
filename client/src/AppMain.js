@@ -27,7 +27,7 @@ import Signin  from  './pages/Signin'
 import SignUp  from  './pages/Signup'
 import Profile  from  './pages/Profile'
 import Shop from './shop/Shop'
-//import NewItems from './shop/NewItems'
+import NewItems from './shop/NewItems'
 //import StuRegist from './school/StuRegist'
 //import Marks from './school/Marks'
 //import Category from './school/Category'
@@ -52,8 +52,9 @@ if(loggedIn){
       <Route path='/profile' element={<><Header/><Sidebar content={<Profile/>}/></>}/>
       <Route path='/calculator' element={<><Header/><Sidebar content={<Calculator/>}/></>}/>
       <Route path='/electronics' element={<><Header/><Sidebar content={<><Shop/></>}/></>} />
+      */
       <Route path='/additems' element={<><Header/><Sidebar content={<><NewItems/></>}/></>} />
-      */}
+      }
       </Routes>
       </BrowserRouter>
     
@@ -81,7 +82,7 @@ else{
    <Route path='/category' element={<><UserHeader/><Category/><Map/><Voice/></>} />
    */}
    <Route path='/contact' element={<><UserHeader/><Contact/></>} />
-   <Route path='/saree' element={<><UserHeader/><Shop/></>}/>
+   <Route path='/saree' element={<><UserHeader/><NewItems/></>}/>
    
 
       </Routes>
