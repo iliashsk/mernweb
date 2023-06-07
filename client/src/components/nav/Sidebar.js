@@ -70,9 +70,9 @@ const Sidebar = ({content}) => {
       <Link to='/rating' ></Link>
     </Item>
     </SubMenu >
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
+    <Item key="alluser" icon={<HomeOutlined />}>
+    All Users
+      <Link to='/alluser' ></Link>
     </Item>
     <Item key="home" icon={<HomeOutlined />}>
     home

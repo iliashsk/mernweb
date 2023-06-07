@@ -11,25 +11,23 @@ class Carousel extends Component {
   render() {
     return (<>
 
-      <br/><br/><br/>
+      <br/>
       
   
      <div class ="wrapper">
 
-  <button style={{position:'absolute',center: '0', marginRight:'150px'}}><img src='photo/logojt.jpeg' heigt="50px" width="50px" alt='jt' align='center'></img></button>
+  
 
   <a href='tel:9563734519' align='right' style={{float:'right',marginLeft:'auto'}}><h1 >Call:9563734519</h1></a>
 
 </div>
 
       <div align='center' >
-       
-       <img src="photo/logo.jpeg" alt="logo" style={(window.innerwidth<720)?{width:'420px',marginRight:'5px'}:{width:'425px'}}></img>
-       
+      <h1 style={{color:'green'}}>Jonopriyo Textile and Fasion</h1>
       </div>
 
       <h3 align='center' style={{color:'red',fontSize:'20px'}}>Kaliachak </h3>
-      <h4 align='center' style={{color:'violet',fontSize:'15px'}}>Good Quality Makes Priority </h4>
+      <h4 align='center' style={{color:'blue',fontSize:'15px'}}>Good Quality Makes Priority </h4>
   
 <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel" style={(window.innerwidth>720)?{marginLeft:'20px',marginRight:'20px'}:{marginLeft:'0px',marginRight:'0px'}}>
   <ol className="carousel-indicators">

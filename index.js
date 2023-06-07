@@ -4,6 +4,7 @@ import logger from 'morgan'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import postRoutes from "./routes/posts.js"
+import ordRoute from './routes/OrderRoute.js'
 import Item from './models/postMessage.js'
 import bodyParser from 'body-parser';
 import { fileURLToPath } from 'url';
@@ -38,7 +39,7 @@ app.use(express.urlencoded({ extended: false }));
 
 
 app.use("/",postRoutes);
-
+app.use('/api/users', ordRoute)
 let port = process.env.PORT||5000;
 
 
@@ -123,18 +124,32 @@ transformation: [{ width: 500, height: 500, crop: "limit" }]
 });
 const parser=multer({storage:store})
 // Upload
-app.post('/cl/cloudinary',parser.single('photo', {public_id: "iliash"}),(req,res)=>{
-  const {name,title}=req.body;
-  const filename=req.file.path;
-  console.log(name)
-  const fname=path.parse(filename).name;
+app.post('/cl/cloudinary',parser.array('photo',3),(req,res)=>{
+    //console.log(req.files[0].path+req.files[1].path);
+  //console.log(req.files)
+   const {name,title,price,sellprice}=req.body;
+
+  const filename1=req.files[0].path;
+  const filename2=req.files[1].path;
+  const filename3=req.files[2].path;
+
+  const fname1=path.parse(filename1).name;
+  const fname2=path.parse(filename2).name;
+  const fname3=path.parse(filename3).name;
 
 
   const photo=new PhotoData({
     name:name,
     title:title,
-    filename:filename,
-    fname:fname,
+    price:price,
+    sellprice:sellprice,
+    filename1:filename1,
+    filename2:filename2,
+    filename3:filename3,
+    fname1:fname1,
+    fname2:fname2,
+    fname3:fname3,
+
   })
   photo.save();
 
@@ -143,9 +158,18 @@ app.post('/cl/cloudinary',parser.single('photo', {public_id: "iliash"}),(req,res
 
 //////////////////////////////////////////////
 app.get('/cl/getphoto',(req,res)=>{
-  PhotoData.find({}).then((result)=>{
+  PhotoData.find({}).sort({_id:-1}).then((result)=>{
     res.json(result);
     console.log(result)
+  });
+
+});
+////////////////
+app.post('/single/photo',(req,res)=>{
+  //console.log(req.body.category)
+  PhotoData.findOne({_id:req.body.category}).then((result)=>{
+    res.json(result);
+    //console.log(result)
   });
 
 });

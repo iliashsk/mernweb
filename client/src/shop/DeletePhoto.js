@@ -3,14 +3,14 @@ import { useAuthStatus } from '../hooks/useAuthStatus'
 import axios from 'axios'
 
 
-const DeletePhoto=({id,fname,load})=>{
+const DeletePhoto=({id,fname1,fname2,fname3,load})=>{
 
 	const {isLoading, loggedIn} = useAuthStatus();
 	const navigate=useNavigate()
 
 	const handleDelete=()=>{
-		console.log(id+"/"+fname)
-		const data={id,fname}
+		//console.log(id+"/"+fname)
+		const data={id,fname1,fname2,fname3}
 		axios.post('/cl/delphoto',data)
              .then(res => {
                 console.log(res);

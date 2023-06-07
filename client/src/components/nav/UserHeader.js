@@ -51,7 +51,7 @@ const UserHeader=()=>{
         Sarees
         <Link to='/saree' />
          </Item>
-      <Item key="three" icon={<AppstoreOutlined/>}>
+      <Item key="three" icon={<AppstoreOutlined/>} style={{marginLeft:'auto'}}>
         Admin Singnin
         <Link to='/signin' />
          </Item>
@@ -86,7 +86,7 @@ const UserHeader=()=>{
          </Menu>
     )
   }
-  
+  <br/><br/>
 </>);
 }
 export default UserHeader;
