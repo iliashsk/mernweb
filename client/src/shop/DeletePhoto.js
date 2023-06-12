@@ -1,6 +1,7 @@
 import {useNavigate} from 'react-router-dom'
 import { useAuthStatus } from '../hooks/useAuthStatus'
 import axios from 'axios'
+import {toast} from "react-toastify"
 
 
 const DeletePhoto=({id,fname1,fname2,fname3,load})=>{
@@ -14,6 +15,7 @@ const DeletePhoto=({id,fname1,fname2,fname3,load})=>{
 		axios.post('/cl/delphoto',data)
              .then(res => {
                 console.log(res);
+                toast("successfully deleted")
              })
              .catch(err => {
                 console.log(err);

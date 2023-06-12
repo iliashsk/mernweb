@@ -101,7 +101,7 @@ app.get("/photo",(req,res)=>{
 res.json(data)
 
 const name=__dirname+'/images/'+files[0].photo
-console.log(files.length)
+//console.log(files.length)
   })
   
 
@@ -160,7 +160,7 @@ app.post('/cl/cloudinary',parser.array('photo',3),(req,res)=>{
 app.get('/cl/getphoto',(req,res)=>{
   PhotoData.find({}).sort({_id:-1}).then((result)=>{
     res.json(result);
-    console.log(result)
+    //console.log(result)
   });
 
 });

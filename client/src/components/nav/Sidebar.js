@@ -1,6 +1,6 @@
 import React from 'react';
 import Appli from '../../ratingcomponent/Appli'
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 import {
   AppstoreOutlined,
   BarChartOutlined,
@@ -13,6 +13,8 @@ import {
   HomeOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu, theme } from 'antd';
+import { getAuth, updateProfile } from 'firebase/auth'
+
 const {SubMenu,Item}=Menu;
 const { Header, Content, Footer, Sider } = Layout;
 const items = [
@@ -38,6 +40,14 @@ const Sidebar = ({content}) => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+
+   const auth=getAuth();
+  const navigate=useNavigate();
+    const onLogout = () => {
+    auth.signOut()
+    navigate('/');
+    navigate(0);
+  }
   return (
     <Layout hasSider>
       <Sider
@@ -48,7 +58,6 @@ const Sidebar = ({content}) => {
           left: 0,
           top: 0,
           bottom: 0,
-          marginTop:"46px",
           background:"lightgreen"
         }}
       >
@@ -56,9 +65,10 @@ const Sidebar = ({content}) => {
           style={{
             height: 32,
             margin: 16,
-            background: 'rgba(255, 255, 255, 0.2)',
+            width:100,
+            fontSize:30
           }}
-        />
+        >DashBoard</div>
         <Menu theme="blue" mode="inline" key="Home" >
        <Item key="home" icon={<HomeOutlined />}>
     home
@@ -74,74 +84,16 @@ const Sidebar = ({content}) => {
     All Users
       <Link to='/alluser' ></Link>
     </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
+    <Item key="three" icon={<AppstoreOutlined/>}>
+        Add Items
+         <Link to='/additems' ></Link>
     </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
+
+     <Item key="logout" className="log" icon={<AppstoreOutlined/>} onClick={onLogout} style={{color:"red"}}>
+        Logout
+        
     </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
-    <Item key="home" icon={<HomeOutlined />}>
-    home
-      <Link to='/' ></Link>
-    </Item>
+        
    </Menu>
       </Sider>
       <Layout
@@ -153,8 +105,8 @@ const Sidebar = ({content}) => {
        
         <Content
           style={{
-            margin: '24px 16px 0',
-            overflow: 'initial',
+            
+            overflow: 'auto',
 
           }}
         >
@@ -162,8 +114,7 @@ const Sidebar = ({content}) => {
             style={{
               padding: 24,
               textAlign: 'center',
-              background: "#8908",
-              marginTop:"20px",
+              background: "#dddddd",
             }}
           >
             {content}

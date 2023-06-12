@@ -21,7 +21,6 @@ import {useContext} from 'react';
 //import Calculator from './components/Calculator'
 import Header from './components/nav/Header'
 import { useAuthStatus } from './hooks/useAuthStatus'
-import { ToastContainer } from 'react-toastify'
 //import ForgotPassword  from  './pages/ForgotPassword'
 import Signin  from  './pages/Signin'
 import SignUp  from  './pages/Signup'
@@ -31,6 +30,7 @@ import NewItems from './shop/NewItems'
 import OrderForm from './shop/OrderForm'
 import SingleItem from './shop/SingleItem'
 import AllUser from './shop/AllUser'
+
 //import StuRegist from './school/StuRegist'
 //import Marks from './school/Marks'
 //import Category from './school/Category'
@@ -45,9 +45,10 @@ const { loggedIn} = useAuthStatus();
 if(loggedIn){
   return (<>
      <FeedbackProvider>
+    
     <div className="main"><BrowserRouter>
       <Routes>
-      <Route path='/' element={<><div><Header/></div><div><Sidebar content={<><Carousel/><AboutPage/></>}/></div></>} />
+      <Route path='/' element={<><div></div><div><Sidebar content={<><Carousel/><AboutPage/></>}/></div></>} />
      {/* <Route path='/rating' element={<><Header/><Sidebar content={<Appli/>}/></>}/>
       <Route path='/regist' element={<><Header/><Sidebar content={<Create/>}/></>}/>
       <Route path='/registdetails' element={<><Header/><Sidebar content={<App/>}/></>}/>
@@ -57,8 +58,8 @@ if(loggedIn){
       <Route path='/electronics' element={<><Header/><Sidebar content={<><Shop/></>}/></>} />
       */
        }
-      <Route path='/additems' element={<><Header/><Sidebar content={<><NewItems/></>}/></>} />
-       <Route path='/alluser' element={<><Header/><Sidebar content={<><AllUser/></>}/></>} />
+      <Route path='/additems' element={<><Sidebar content={<><NewItems/></>}/></>} />
+       <Route path='/alluser' element={<><Sidebar content={<><AllUser/></>}/></>} />
       
      
       </Routes>
@@ -72,11 +73,12 @@ if(loggedIn){
 else{
   return (<>
     <BrowserRouter>
+    
     <Routes>
    {/* <Route path='/forgot-password' element={<><ForgotPassword/></>} />*/}
-          <Route path='/' element={<><UserHeader/><Carousel/><Contact/></>} />
+         
        { /*  <Route path='/signup' element={<><SignUp/></>} /> */}
-          <Route path='/signin' element={<><UserHeader/><Signin/></>} />
+         
 
  {/* <Route path='/rating' element={<><UserHeader/><Appli/></>}/>
  <Route path='/regist' element={<><UserHeader/><Create/></>}/>
@@ -87,6 +89,8 @@ else{
   <Route path='/marks' element={<><UserHeader/><Marks/>}/></>} />
    <Route path='/category' element={<><UserHeader/><Category/><Map/><Voice/></>} />
    */}
+    <Route path='/' element={<><UserHeader/><Carousel/><Contact/></>} />
+  <Route path='/signin' element={<><UserHeader/><Signin/></>} />
    <Route path='/contact' element={<><UserHeader/><Contact/></>} />
    <Route path='/saree' element={<><UserHeader/><NewItems/></>}/>
    <Route path="/single" element={<><UserHeader/><SingleItem/></>} />

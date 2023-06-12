@@ -4,6 +4,7 @@ import {useNavigate,createSearchParams} from 'react-router-dom'
 import { ImageListItem,ImageList } from '@mui/material';
 import { useAuthStatus } from '../hooks/useAuthStatus'
 import DeletePhoto from './DeletePhoto.js'
+import {toast} from 'react-toastify'
 
 const NewItems = () => {
     const [newUser, setNewUser] = useState(
@@ -54,8 +55,15 @@ setSrc(res.data)
      loadPhoto();
     setTimeout(() => {
       loadPhoto()
-    }, 2000)
-    
+    }, 3000)
+    toast("Uploaded Successfully")
+   setNewUser({
+            name: '',
+            title: '',
+            photo: [],
+            price:'',
+            sellprice:''
+        })
     }
 
     const handleChange = (e) => {
@@ -201,7 +209,7 @@ useEffect(()=>{
       </button>
       </form></>)
      :
-     (<><div width="90px" style={{fontSize:'11px'}}>
+     (<><div width="90%" style={{fontSize:'11px'}}>
         <form onSubmit={handleImage}>
         
         <button  style={{cursor:'pointer'}}>

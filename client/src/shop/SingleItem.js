@@ -1,7 +1,7 @@
 import {useSearchParams,createSearchParams,useNavigate} from 'react-router-dom'
 import {useEffect,useState} from 'react'
 import axios from 'axios'
-
+import {toast} from 'react-toastify'
 const SingleItem=()=>{
 const [searchParams]=useSearchParams()
 const category=searchParams.get('id');
@@ -14,6 +14,7 @@ useEffect(()=>{
 .then(res=>{
 	//console.log(res.data)
 setSrc(res.data)
+toast("Now fill the form to order")
 })
 },[]);
 
@@ -28,6 +29,7 @@ const handleBuy=(e)=>{
         
         }).toString()
         });
+        
 }
 return(<>
 {(window.innerWidth>720)?

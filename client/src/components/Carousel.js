@@ -23,7 +23,7 @@ class Carousel extends Component {
 </div>
 
       <div align='center' >
-      <h1 style={{color:'green'}}>Jonopriyo Textile and Fasion</h1>
+      <h1 style={{color:'green'}}>Jonopriyo Textile and Fashion</h1>
       </div>
 
       <h3 align='center' style={{color:'red',fontSize:'20px'}}>Kaliachak </h3>

@@ -2,6 +2,8 @@ import React,{Component} from 'react';
 import ReactDOM from 'react-dom/client';
 import AppMain from './AppMain'
 import axios from 'axios';
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 
 
@@ -20,6 +22,7 @@ if(10===20/2){
 
     
        <>     
+       <ToastContainer/>
     <AppMain/>
     </>
     )}

@@ -2,6 +2,7 @@ import React,{useState,useEffect} from "react";
 import axios from 'axios';
 import {useSearchParams,useNavigate} from 'react-router-dom'
 import Button from '../components/Button'
+import {toast} from 'react-toastify'
 
 function OrderForm(){
 
@@ -50,7 +51,7 @@ const handlChange=(e)=>{
         alert("success")
       }
     })
-    
+    toast("your order is taken")
 navigate('/');
 	}
   useEffect(()=>{

@@ -14,7 +14,7 @@ const UserHeader=()=>{
 
 
 	const handleClick=(e)=>{
-		console.log(e.key);
+		//console.log(e.key);
 		setCurrent(e.key);
 
 	}
@@ -47,10 +47,17 @@ const UserHeader=()=>{
       Contact Us
         <Link to='/contact' ></Link>
       </Item>
-      <Item key="saree" icon={<AppstoreOutlined/>}>
-        Sarees
+      <SubMenu key="saree1" title="Sarees" >
+        <Item key="saree">
+        Minu Sarees
+        <Link to='/saree2' />
+        </Item>
+        <Item key="saree">
+        benarasi Sarees
         <Link to='/saree' />
-         </Item>
+        </Item>
+      </SubMenu>
+
       <Item key="three" icon={<AppstoreOutlined/>} style={{marginLeft:'auto'}}>
         Admin Singnin
         <Link to='/signin' />
@@ -72,10 +79,16 @@ const UserHeader=()=>{
         <Link to='/contact' ></Link>
       </Item>
 
-      <Item key="saree" icon={<AppstoreOutlined/>}>
-        Sarees
+     <SubMenu key="saree1" title="Sarees" >
+        <Item key="saree">
+        Minu Sarees
+        <Link to='/saree2' />
+        </Item>
+        <Item key="saree">
+        benarasi Sarees
         <Link to='/saree' />
-         </Item>
+        </Item>
+      </SubMenu>
 
       <Item key="three" icon={<AppstoreOutlined/>}>
         Admin Singnin
